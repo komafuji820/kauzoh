@@ -1,0 +1,30 @@
+<div class="main__wrapper">
+  <div class="main__section">
+
+    <div class="group__detail">
+      <div class="group__main-section-name">
+        グループ：<%= @group.name %>
+      </div>
+      <div class="group__member">
+        メンバー：
+        <% @users.each do |user| %>
+          <%= user.nickname %>
+        <% end %>
+      </div>
+      <ul class="group__item">
+        <li><%= link_to '在庫を見る', "#", class:"check-item" %></li>
+        <li><%= link_to '在庫を編集する', "#", class:"add-item" %></li>
+      </ul>
+      <ul class="group__order">
+        <li><%= link_to 'お買い物リストを見る', "#", class:"check-order" %></li>
+        <li><%= link_to 'お買い物リストを編集する', "#", class:"create-order" %></li>
+      </ul>
+      <ul class="group__edit">
+        <li><%= link_to 'グループを編集する', "#", class:"edit-group" %></li>
+        <li><%= link_to 'グループを削除する', "#", data: { turbo_method: :delete }, class:"delete-group" %></li>
+      </ul>
+    </div>
+    
+  </div>
+  <%= render partial: 'list' %>
+</div>

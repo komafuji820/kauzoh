@@ -4,7 +4,7 @@
   </div>
   <ul class="group__list">
     <% current_user.groups.each do |group| %>
-      <li><%= link_to group.name, '#', class:"group__name" %>
+      <li><%= link_to group.name, group_path(group.id), class:"group__name" %>
     <% end %>
   </ul>
 </div>

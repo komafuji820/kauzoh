@@ -1,0 +1,38 @@
+/* グループ詳細画面 */
+.group__detail{
+  padding: 10px 30px 20px;
+  font-size: 18px;
+  background-color: rgb(249, 223, 238);
+  border-radius: 10px;
+  color: darkslateblue;
+}
+
+.group__main-section-name{
+  color: darkslateblue;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 5px;
+  background: linear-gradient(transparent 60%, #ddaf16 60%);
+  text-shadow: 1px 1px 1px white;
+  margin-bottom: 20px;
+}
+
+.group__member{
+  margin-bottom: 20px;
+}
+
+.group__order, .group__item, .group__edit{
+  margin-bottom: 20px;
+  list-style: inside;
+}
+
+.group__order li, .group__item li, .group__edit li{
+  margin-bottom: 5px;
+}
+
+.check-order, .check-item, .create-order, .add-item, .edit-group, .delete-group{
+  text-decoration: none;
+  color: darkslateblue;
+}

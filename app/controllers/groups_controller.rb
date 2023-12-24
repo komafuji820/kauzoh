@@ -42,6 +42,11 @@ class GroupsController < ApplicationController
     end
   end
 
+  def show
+    @group = Group.find(params[:id])
+    @users = @group.users
+  end
+
   private
 
   # メンバーリストに追加する時のストロングパラメータ
