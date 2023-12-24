@@ -1,0 +1,85 @@
+/* ヘッダー全体 */
+.header{
+  height: 40px;
+  width: 100vw;
+  background-color: pink;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* タイトル部分 */
+.header__title-section{
+  line-height: 40px;
+  display: flex;
+}
+
+.header__title{
+  color: darkslateblue;
+  font-size: 25px;
+  text-decoration: none;
+  font-family: 'Prata', serif;
+  text-shadow: 1px 1px 1px white;
+  letter-spacing: 1px;
+}
+
+.header__user-name{
+  color: darkslateblue;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  text-shadow: 1px 1px 1px white;
+  margin-left: 50px;
+  letter-spacing: 3px;
+}
+
+/* ログアウト・ログイン＆新規登録 */
+.header__nav-section{
+  line-height: 40px;
+  font-size: 20px;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__link{
+  margin-left: 30px;
+  text-decoration: none;
+  color: darkslateblue;
+  text-shadow: 1px 1px 1px white;
+  letter-spacing: 1px;
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+    /* ヘッダー全体 */
+  .header{
+    height: 30px;
+    padding: 0 20px;
+  }
+
+  /* タイトル部分 */
+  .header__title-section{
+    line-height: 30px;
+  }
+
+  .header__title{
+    font-size: 18px;
+  }
+
+  .header__user-name{
+    font-size: 15px;
+    margin-left: 20px;
+  }
+
+  /* ログアウト・ログイン＆新規登録 */
+  .header__nav-section{
+    line-height: 30px;
+    font-size: 12px;
+  }
+
+  .header__link{
+    margin-left: 15px;
+  }
+
+}

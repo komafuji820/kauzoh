@@ -1,0 +1,91 @@
+/* サインアップフォーム全体・サインインフォーム全体 */
+.sign-up-wrapper, .sign-in-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 40px - 18px);
+}
+
+.sign-up-title, .sign-in-title{
+  font-size: 25px;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.new_user{
+  background-color: rgb(249, 223, 238);
+  border-radius: 10px;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  font-size: 15px;
+  padding: 10px 10px 20px;
+}
+
+.sign-up-flash-message, .sign-in-flash-message{
+  text-align: center;
+  margin: 7px 0;
+  color: red;
+}
+
+.field{
+  margin: 10px 20px 10px;
+}
+
+.sign-up-form, .sign-in-form{
+  width: 100%;
+  font-size: 15px;
+  margin-top: 3px;
+}
+
+.actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up-btn, .sign-in-btn{
+  height: 30px;
+  width: 50%;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  font-size: 15px;
+  background-color: skyblue;
+  border-radius: 5px;
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  .sign-up-wrapper, .sign-in-wrapper{
+    height: calc(100vh - 32px - 14px);
+  }
+  
+  .sign-up-title, .sign-in-title{
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .new_user{
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 8px 8px 16px;
+  }
+  
+  .sign-up-flash-message, .sign-in-flash-message{
+    margin: 5px 0;
+  }
+  
+  .field{
+    margin: 8px 16px 8px;
+  }
+  
+  .sign-up-form, .sign-in-form{
+    font-size: 12px;
+    margin-top: 2px;
+  }
+    
+  .sign-up-btn, .sign-in-btn{
+    height: 24px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+}

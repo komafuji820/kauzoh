@@ -1,0 +1,35 @@
+<div class="sign-up-wrapper">
+  <div class="sign-up-section">
+    <div class="sign-up-title">
+      新規登録
+    </div>
+
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label 'ニックネーム（10文字以内）' %><br />
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "（例）太郎", maxlength: 10, class:"sign-up-form"%>
+    </div>
+
+    <div class="field">
+      <%= f.label 'メールアドレス' %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "（例）taro@gmail.com", class:"sign-up-form" %>
+    </div>
+
+    <div class="field">
+      <%= f.label "パスワード（半角#{@minimum_password_length}文字以上）" %><br />
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "英数字を両方使用", class:"sign-up-form" %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'パスワード確認用' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう一度入力して下さい", class:"sign-up-form" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録する", class:"sign-up-btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>
