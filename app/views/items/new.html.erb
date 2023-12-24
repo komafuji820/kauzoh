@@ -19,8 +19,9 @@
   </div>
 
   <div>
-  <%= f.submit "在庫リストに追加する" ,class:"add-items-btn" %>
+  <%= f.submit "在庫リストに追加する", class:"add-items-btn" %>
   </div>
   
 <% end %>
 </div>
+<%= link_to '在庫を見る', group_items_path(@group.id) %>

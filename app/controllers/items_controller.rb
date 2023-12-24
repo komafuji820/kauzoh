@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @group = Group.find(params[:group_id])
   end
 
   def create
