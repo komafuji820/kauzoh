@@ -1,3 +1,11 @@
-新規作成
+<div class="main__wrapper">
+  <div class="main__section">
 
-<%= link_to 'ログアウト',  destroy_user_session_path, data:{turbo_method: :delete} %>
+    <div class="group__message">
+      <p>ようこそ、<%= current_user.nickname %>さん！</p>
+      <p>家族や友達と買い物リストを共有しよう！</p>
+    </div>
+    
+  </div>
+  <%# <%= render partial: 'list' %> %>
+</div>
