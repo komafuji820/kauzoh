@@ -1,0 +1,33 @@
+<div class="main__wrapper">
+  <div class="main__section">
+
+    <div class="search-results__section">  
+      <%= form_with model: @user, url: add_members_groups_path, method: :get, class: "search-results", local: true do |f| %>
+
+        <% if @users.present? %>
+          <div class="select-user">
+            <p>メンバーリストに加えるユーザーを選択</p>
+            <% @users.each do |user| %>
+              <div class="select-user-name">
+              <%= check_box_tag "group[user_ids][]", user.id %>
+              <%= label_tag "group[user_ids][]", user.nickname %>
+              <%= label_tag "group[user_ids][]", user.email %>
+              </div>
+            <% end %>
+          </div>
+          <div class="actions">
+          <%= f.submit "メンバーリストに追加", class:"search-results__btn" %>
+          </div>
+        <% else %>
+          <p class="no-user-message">該当するユーザーはいませんでした</p>
+          <div>
+          <%= link_to '戻る', search_users_path, class:"return-link" %>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
+
+  </div>
+  <%= render partial: '/groups/list' %>
+</div>

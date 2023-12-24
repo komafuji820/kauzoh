@@ -1,0 +1,40 @@
+/* ユーザー検索結果表示ページ */
+.add-members__section{
+  background-color: rgb(249, 223, 238);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.add-members__title{
+  font-size: 20px;
+  text-align: center;
+}
+
+.add-members__name{
+  margin-top: 15px;
+  font-size: 18px;
+  list-style: inside;
+}
+
+.actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.actions li{
+  margin-top: 25px;
+}
+
+.add-members__link{
+  font-family: 'BIZ UDPGothic', sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  background-color: skyblue;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid;
+}

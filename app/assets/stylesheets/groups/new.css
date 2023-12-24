@@ -1,0 +1,52 @@
+/* グループ作成（グループ名入力）ページ */
+
+.create-group__member-list{
+  margin-bottom: 20px;
+  background-color: rgb(249, 223, 238);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.create-group__explain{
+  font-size: 20px;
+}
+
+.create-group__member-name{
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.create-group__input-name{
+  margin-bottom: 20px;
+  background-color: rgb(249, 223, 238);
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.create-group__input{
+  font-size: 20px;
+}
+
+.create-group__form{
+  width: 100%;
+  font-size: 15px;
+  margin: 20px 0 10px;
+}
+
+.actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.create-group__btn{
+  font-family: 'BIZ UDPGothic', sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  background-color: skyblue;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid;
+}

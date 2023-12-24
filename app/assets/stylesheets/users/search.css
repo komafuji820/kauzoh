@@ -1,0 +1,45 @@
+/* ユーザー検索ページ */
+.search__user-section{
+  background-color: rgb(249, 223, 238);
+  border-radius: 5px;
+}
+
+.search__user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.search__user-title{
+  font-size: 25px;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.search__user-explain{
+  font-size: 18px;
+}
+
+.search__user-form{
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search__user-btn{
+  height: 30px;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  font-size: 15px;
+  background-color: skyblue;
+  padding: 0 10px;
+  border-radius: 5px;
+}

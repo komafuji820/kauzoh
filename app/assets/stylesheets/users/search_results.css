@@ -1,0 +1,59 @@
+/* ユーザー検索結果表示ページ */
+.search-results__section{
+  background-color: rgb(249, 223, 238);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.search-results{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.select-user{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.select-user-name{
+  margin-top: 10px;
+}
+
+.search-results__form{
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-results__btn{
+  height: 30px;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  font-size: 15px;
+  background-color: skyblue;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.no-user-message{
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.return-link{
+  font-family: 'BIZ UDPGothic', sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  background-color: skyblue;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid;
+}

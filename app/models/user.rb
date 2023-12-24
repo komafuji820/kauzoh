@@ -9,4 +9,13 @@ class User < ApplicationRecord
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, on: :create
 
+  has_many :group_users
+  has_many :groups, through: :group_users
+
+  def self.search(search)
+    if search != ""
+      User.where('nickname LIKE(?)', "%#{search}%").or User.where('email LIKE(?)', "%#{search}%")
+    end
+  end
+
 end
