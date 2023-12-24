@@ -2,23 +2,23 @@ default: &default
     encoding: utf8
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } % >
 
-  development:
-    <<: *default
-    adapter: mysql2
-    username: root
-    password:
-    host: localhost
-    database: kauzoh_development
+development:
+  <<: *default
+  adapter: mysql2
+  username: root
+  password:
+  host: localhost
+  database: kauzoh_development
 
-  test:
-    <<: *default
-    adapter: mysql2
-    username: root
-    password:
-    host: localhost
-    database: kauzoh_test
+test:
+  <<: *default
+  adapter: mysql2
+  username: root
+  password:
+  host: localhost
+  database: kauzoh_test
 
-  production:
-    <<: *default
-    adapter: postgresql
-    url: <%= ENV['DATABASE_URL'] % >
+production:
+  <<: *default
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] % >
