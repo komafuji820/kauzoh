@@ -1,0 +1,58 @@
+/* グループ一覧画面全体 */
+.main__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+/* 画面左のグループリスト */
+.group__nav-bar{
+  height: calc(100vh - 40px - 18px);
+  width: 200px;
+  background-color: lightgoldenrodyellow;
+  padding: 15px 30px 0;
+  overflow: auto;
+}
+
+.group__nav-title{
+  color: darkslateblue;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  border-bottom: double;
+  text-shadow: 1px 1px 1px white;
+  margin-bottom: 10px;
+}
+
+.group__name{
+  display: block;
+  color: darkslateblue;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 5px;  
+  margin-bottom: 10px;
+  background: linear-gradient(transparent 60%, #ddaf16 60%);
+  text-shadow: 1px 1px 1px white;
+  font-size: 18px;
+}
+
+/* 画面中央のメイン部分 */
+.main__section{
+  height: calc(100vh - 40px - 18px);
+  width: calc(100vw - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.group__message{
+  line-height: 60px;
+  padding: 0 30px;
+  font-size: 30px;
+  color: darkslateblue;
+  font-family: 'BIZ UDPGothic', sans-serif;
+}

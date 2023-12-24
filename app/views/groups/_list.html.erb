@@ -1,0 +1,10 @@
+<div class="group__nav-bar">
+  <div class="group__nav-title">
+    グループリスト
+  </div>
+  <ul class="group__list">
+    <% current_user.groups.each do |group| %>
+      <li><%= link_to group.name, '#', class:"group__name" %>
+    <% end %>
+  </ul>
+</div>
