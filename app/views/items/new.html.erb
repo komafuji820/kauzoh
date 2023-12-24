@@ -1,0 +1,25 @@
+在庫リストを作成する
+
+<div>
+<%= flash.now[:items_create_error] %>
+</div>
+
+<div class="items-form">
+<%= form_with model: @item, url: group_items_path, local: true do |f| %>
+  <div>
+  <%= f.label 'カテゴリーを選択してください'%>
+  </div>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+  <div>
+  <%= f.label 'メモを保存できます'%>
+  </div>
+  <%= f.text_field :memo, class:"memo", placeholder:"(例)賞味期限は12/31" %>
+  <div>
+  <%= f.label '画像を添付してください'%>
+  </div>
+  <%= f.file_field :image %>
+  <div>
+  <%= f.submit "在庫リストに追加する" ,class:"add-items-btn" %>
+  </div>
+<% end %>
+</div>
