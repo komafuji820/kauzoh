@@ -47,6 +47,12 @@ class GroupsController < ApplicationController
     @users = @group.users
   end
 
+  def destroy
+    group = Group.find(params[:id])
+    group.destroy
+    redirect_to root_path
+  end
+
   private
 
   # メンバーリストに追加する時のストロングパラメータ

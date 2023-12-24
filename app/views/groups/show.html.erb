@@ -21,7 +21,7 @@
       </ul>
       <ul class="group__edit">
         <li><%= link_to 'グループを編集する', "#", class:"edit-group" %></li>
-        <li><%= link_to 'グループを削除する', "#", data: { turbo_method: :delete }, class:"delete-group" %></li>
+        <li><%= link_to 'グループを削除する', group_path(@group.id), data: { turbo_method: :delete }, class:"delete-group" %></li>
       </ul>
     </div>
     
