@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     collection do
       get 'add_members'
     end
-    resources :items, only: [:index, :new, :create, :edit, :update]
+    resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 
   resources :users do
