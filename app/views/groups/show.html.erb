@@ -12,7 +12,7 @@
         <% end %>
       </div>
       <ul class="group__item">
-        <li><%= link_to '在庫を見る', "#", class:"check-item" %></li>
+        <li><%= link_to '在庫を見る', group_items_path(@group.id), class:"check-item" %></li>
         <li><%= link_to '在庫を編集する', new_group_item_path(@group.id), class:"add-item" %></li>
       </ul>
       <ul class="group__order">

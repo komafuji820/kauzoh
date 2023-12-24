@@ -1,0 +1,23 @@
+在庫リスト
+
+<% @items.each do |item| %>
+  <div>
+  カテゴリ：<%= item.category.name %>
+  </div>
+  <div>
+    <% if item.memo == "" %>
+      メモ : なし
+    <% else %>
+      <%= item.memo %>
+    <% end %>
+  </div>
+  <div>
+  <%# <% if item.image.attached? %> %>
+    <%# <%= image_tag item.image.variant(resize: '300x200'), class: 'item-images' %> %>
+  <%# <% else %> %>
+    <%# <%= image_tag 'noimage.jpg', :size => '300x200' %> %>
+  <%# <% end %> %>
+  </div>
+  <%# <%= link_to '編集', edit_group_item_path(id: item.id) %> %>
+  <%# <%= link_to '削除', group_item_path(id: item.id), data:{turbo_method: :delete} %> %>
+<% end %>
