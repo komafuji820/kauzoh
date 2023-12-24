@@ -1,0 +1,41 @@
+<div class="main__wrapper">
+  <div class="main__section">
+
+    <div class="create-group__section">
+      <%= form_with model: @group, class:"create-group", local: true do |f| %>
+        
+        <div class="create-group__member-list">
+        <% if @members.present? %>
+          <div class="create-group__explain">
+            チェックを入れるとメンバーが確定します。
+          </div>
+          <% @members.each do |member| %>  
+            <div class="create-group__member-name">
+            <%= check_box_tag "group[user_ids][]", member.id %>
+            <%= label_tag "group[user_ids][]", member.nickname %>
+            <%= label_tag "group[user_ids][]", member.email %>
+            </div>
+          <% end %>
+        <% end %>
+        </div>
+
+        <div class="create-group__input-name">
+          <div class="field">
+          <%= f.label 'グループ名を入力してください', class:"create-group__input" %><br />
+          <%= f.text_field :name, autocomplete: "name", placeholder: 'グループ名', class:"create-group__form" %>
+
+          <input name="group[user_ids][]" value=<%= current_user.id %> type="hidden">
+          </div>
+
+          <div class="actions">
+          <%= f.submit "グループを作成", class:"create-group__btn" %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+    <%= link_to 'ユーザー検索に戻る', search_users_path, class:"return-link"  %>
+    
+  </div>
+  <%# <%= render partial: 'list' %> %>
+</div>

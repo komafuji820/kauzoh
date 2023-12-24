@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'groups#index'
-  resources :groups, only: [:index, :new, :create]
+  resources :groups, only: [:index, :new, :create] do
+    collection do
+      get 'add_members'
+    end
+  end
   resources :users do
     collection do
       get 'search'
