@@ -13,11 +13,11 @@
       </div>
       <ul class="group__item">
         <li><%= link_to '在庫を見る', group_items_path(@group.id), class:"check-item" %></li>
-        <li><%= link_to '在庫を編集する', new_group_item_path(@group.id), class:"add-item" %></li>
+        <li><%= link_to '在庫リストを作成', new_group_item_path(@group.id), class:"add-item" %></li>
       </ul>
       <ul class="group__order">
         <li><%= link_to 'お買い物リストを見る', "#", class:"check-order" %></li>
-        <li><%= link_to 'お買い物リストを編集する', "#", class:"create-order" %></li>
+        <li><%= link_to 'お買い物リストを作成', "#", class:"create-order" %></li>
       </ul>
       <ul class="group__edit">
         <li><%= link_to 'グループを編集する', "#", class:"edit-group" %></li>
