@@ -23,9 +23,13 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new
-    user_ids = session["members_list"]["users"]["ids"]
-    @members = User.find(user_ids)
+    if session["members_list"] == nil
+      @group = Group.new
+    else
+      @group = Group.new
+      user_ids = session["members_list"]["users"]["ids"]
+      @members = User.find(user_ids)
+    end
   end
 
   def create

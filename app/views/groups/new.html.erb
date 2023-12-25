@@ -7,15 +7,19 @@
         <div class="create-group__member-list">
         <% if @members.present? %>
           <div class="create-group__explain">
-            チェックを入れるとメンバーが確定します。
+            このメンバーとグループを作成
           </div>
           <% @members.each do |member| %>  
             <div class="create-group__member-name">
-            <%= check_box_tag "group[user_ids][]", member.id %>
-            <%= label_tag "group[user_ids][]", member.nickname %>
-            <%= label_tag "group[user_ids][]", member.email %>
+            <%= member.nickname %>
+            <%= member.email %>
+            <input name="group[user_ids][]" value=<%= member.id %> type="hidden">
             </div>
           <% end %>
+        <% else %>
+        <div class="create-group__explain">
+          <%= "#{current_user.nickname}さんだけのグループを作成" %>
+        </div>
         <% end %>
         </div>
 

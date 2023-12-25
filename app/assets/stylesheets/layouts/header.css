@@ -25,7 +25,7 @@
 
 .header__user-name{
   color: darkslateblue;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   font-family: 'BIZ UDPGothic', sans-serif;
   text-shadow: 1px 1px 1px white;
@@ -36,7 +36,7 @@
 /* ログアウト・ログイン＆新規登録 */
 .header__nav-section{
   line-height: 40px;
-  font-size: 20px;
+  font-size: 14px;
   font-family: 'BIZ UDPGothic', sans-serif;
   display: flex;
   justify-content: space-between;
