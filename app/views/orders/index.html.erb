@@ -1,0 +1,5 @@
+<% @orders.each do |order| %>
+  <%= order.memo %>
+  <%= order.category.name %>
+  <%= order.priority.name %>
+<% end %>
