@@ -31,6 +31,12 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    order = Order.find(params[:id])
+    order.destroy
+    redirect_to group_orders_path(order.group.id)
+  end
+
   private
 
   def order_params
