@@ -1,0 +1,7 @@
+買い物リスト作成
+<%= form_with model: @order, url: group_orders_path(@group.id), local: true do |f| %>
+  <%= f.text_field :memo, placeholder: "メモ" %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+  <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"priority-select"}) %>
+  <%= f.submit "買い物リスト作成" %>
+<% end %>

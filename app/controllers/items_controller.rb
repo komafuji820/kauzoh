@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    group = Group.find(params[:group_id])
-    @items = group.items
+    @group = Group.find(params[:group_id])
+    @items = @group.items
   end
 
   def new

@@ -1,5 +1,8 @@
 在庫リスト
 
+<%= link_to '続けて投稿する', new_group_item_path(@group.id) %>
+<%= link_to 'グループページTOPへ戻る', group_path(@group.id) %>
+
 <% @items.each do |item| %>
   <div>
   カテゴリ：<%= item.category.name %>
@@ -11,7 +14,6 @@
       <li>メモ：<%= item.memo %></li>
       <% end %>
   </ul>
-  <%= link_to '続けて投稿する', new_group_item_path(item.group.id) %>
   <%= link_to '編集', edit_group_item_path(id: item.id) %>
   <%= link_to '削除', group_item_path(id: item.id), data:{turbo_method: :delete} %>
 <% end %>

@@ -1,0 +1,21 @@
+お買い物リスト
+
+<%= link_to '続けて投稿する', new_group_order_path(@group.id) %>
+<%= link_to 'グループページTOPへ戻る', group_path(@group.id) %>
+
+<% @orders.each do |order| %>
+  <div>
+  カテゴリ：<%= order.category.name %>
+  優先度　：<%= order.priority.name %>
+  </div>
+  <ul>
+  <%# <ul><% if order.image.attached? %>
+      <%# <li><%= image_tag order.image.variant(resize: '300x200'), class: 'item-images'</li> %>
+      <li>メモ：<%= order.memo %></li>
+      <%# <% else %>
+      <%# <li>メモ：<%= order.memo %></li>
+      <%# <% end %>
+  </ul>
+  <%= link_to '編集', edit_group_order_path(id: order.id) %>
+  <%= link_to '削除', group_order_path(id: order.id), data:{turbo_method: :delete} %>
+<% end %>
