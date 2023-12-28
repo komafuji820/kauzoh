@@ -3,6 +3,5 @@
   <%= f.text_field :memo, placeholder: "メモ" %>
   <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
   <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"priority-select"}) %>
-  <%# <%= f.text_field :image, placeholder: "Image Url" %> %>
   <%= f.submit "買い物リスト作成" %>
 <% end %>
