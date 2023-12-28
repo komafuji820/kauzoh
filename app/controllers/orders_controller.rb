@@ -12,9 +12,22 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
-      redirect_to root_path
+      redirect_to group_orders_path(@order.group.id)
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @order = Order.find(params[:id])
+  end
+
+  def update
+    order = Order.find(params[:id])
+    if order.update(order_params)
+      redirect_to group_orders_path(order.group.id)
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
