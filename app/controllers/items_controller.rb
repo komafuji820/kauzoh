@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to group_items_path(@item.group.id)
     else
+      @group = Group.find(params[:group_id])
       render :new, status: :unprocessable_entity
     end
   end
