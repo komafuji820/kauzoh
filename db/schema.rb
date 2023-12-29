@@ -67,6 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_26_140831) do
     t.string "memo"
     t.bigint "group_id", null: false
     t.bigint "item_id", null: false
+    t.integer "category_id", null: false
     t.integer "priority_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
