@@ -1,4 +1,4 @@
-在庫を登録する
+在庫登録
 
 <div class="items-form">
 <%= form_with model: @item, url: group_items_path(@group.id), local: true do |f| %>
@@ -24,3 +24,6 @@
   
 <% end %>
 </div>
+
+<%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
+<%= link_to 'リストの確認・修正', group_items_path(@group.id) %>

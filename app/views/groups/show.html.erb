@@ -11,23 +11,30 @@
           <%= user.nickname %>
         <% end %>
       </div>
+      <p>＜在庫管理＞</p><br>
       <ul class="group__item">
         <% if @group.items.present? %>
-          <li><%= link_to '在庫を見る・編集する', group_items_path(@group.id), class:"check-item" %></li>
+          <li><%= link_to '新規登録', new_group_item_path(@group.id) , class:"check-item" %></li>
+          <li><%= link_to 'リストの確認・修正', group_items_path(@group.id), class:"check-item" %></li>
         <% else %>
-          <li><%= link_to 'New! 在庫管理をはじめる', new_group_item_path(@group.id), class:"add-item" %></li>
+          <li><%= link_to 'New! 新規登録', new_group_item_path(@group.id), class:"add-item" %></li>
         <% end %>
       </ul>
+      <p>＜お買い物リスト＞</p><br>
       <ul class="group__order">
         <% if @group.orders.present? %>
-          <li><%= link_to 'お買い物リストを見る・編集する', group_orders_path(@group.id), class:"check-order" %></li>
+          <li><%= link_to '新規作成（在庫から選ぶ）', group_items_path(@group.id), class:"check-order" %></li>
+          <li><%= link_to '新規作成（それ以外）', "#", class:"check-order" %></li>
+          <li><%= link_to 'リストの確認・修正', group_orders_path(@group.id), class:"check-order" %></li>
         <% else %>
-          <li><%= link_to 'New! お買い物リストを作る', new_group_order_path(@group.id), class:"create-order" %></li>
+          <li><%= link_to 'New! 新規作成（在庫から選ぶ）', group_items_path(@group.id), class:"check-order" %></li>
+          <li><%= link_to 'New! 新規作成（それ以外）', "#", class:"check-order" %></li>
         <% end %>
       </ul>
+      <p>＜グループ管理＞</p><br>
       <ul class="group__edit">
-        <li><%= link_to 'グループを編集する', "#", class:"edit-group" %></li>
-        <li><%= link_to 'グループを削除する', group_path(@group.id), data: { turbo_method: :delete }, class:"delete-group" %></li>
+        <li><%= link_to '編集', "#", class:"edit-group" %></li>
+        <li><%= link_to '削除', group_path(@group.id), data: { turbo_method: :delete }, class:"delete-group" %></li>
       </ul>
     </div>
     
