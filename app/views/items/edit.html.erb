@@ -1,4 +1,4 @@
-在庫リストを編集する
+在庫を修正
 
 <div class="items-form">
 <%= form_with model: @item, url: group_item_path(@item.group.id), local: true do |f| %>
@@ -7,7 +7,7 @@
   </div>
   <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
   <div>
-  <%= f.label 'メモ（任意）'%>
+  <%= f.label '在庫メモ（任意）'%>
   </div>
   <%= f.text_field :memo, class:"memo", placeholder:"(例)賞味期限は12/31" %>
   <div>

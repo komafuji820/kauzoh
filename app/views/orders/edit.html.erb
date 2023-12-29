@@ -3,19 +3,19 @@
 <div class="items-form">
 <%= form_with model: [@item, @order], url: group_order_path(id: @order.id), local: true do |f| %>
   <div>
-  <%= f.label 'カテゴリーを選択'%>
+  <%= f.label 'カテゴリーを選ぶ'%>
   </div>
   <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
   <div>
-  <%= f.label '優先度を選択'%>
+  <%= f.label '優先度（必須）'%>
   </div>
   <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"priority-select"}) %>
   <div>
-  <%= f.label 'メモを編集'%>
+  <%= f.label 'お買い物メモ（任意）'%>
   </div>
   <%= f.text_field :memo, class:"memo", placeholder:"(例)賞味期限は12/31" %>
   <div>
-  <%= f.label '画像を変更（変更しなければ、元の画像が表示されます）'%>
+  <%= f.label '画像を選ぶ（任意）'%>
   </div>
   <%= f.file_field :image %>
   <div>

@@ -7,9 +7,9 @@
 </div>
 <ul><% if @item.image.attached? %>
     <li><%= image_tag @item.image.variant(resize: '300x200'), class: 'item-images' %></li>
-    <li>メモ：<%= @item.memo %></li>
+    <li>在庫メモ：<%= @item.memo %></li>
     <% else %>
-    <li>メモ：<%= @item.memo %></li>
+    <li>在庫メモ：<%= @item.memo %></li>
     <% end %>
 </ul>
 <%= link_to '編集', edit_group_item_path(id: @item.id) %>
