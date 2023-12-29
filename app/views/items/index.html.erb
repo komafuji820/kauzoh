@@ -1,6 +1,6 @@
 在庫リスト
-<%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
 <%= link_to '在庫を登録する', new_group_item_path(@group.id) %>
+<%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
 
 <% if @items.present? %>
 
@@ -9,8 +9,8 @@
     カテゴリ：<%= item.category.name %>
     </div>
     <ul><% if item.image.attached? %>
-        <li><%= image_tag item.image.variant(resize: '300x200'), class: 'item-images' %></li>
         <li>在庫メモ：<%= item.memo %></li>
+        <li><%= image_tag item.image.variant(resize: '300x200'), class: 'item-images' %></li>
         <% else %>
         <li>在庫メモ：<%= item.memo %></li>
         <% end %>
