@@ -1,7 +1,7 @@
 在庫リストを作成する
 
 <div class="items-form">
-<%= form_with model: @item, url: group_items_path, local: true do |f| %>
+<%= form_with model: @item, url: group_items_path(@group.id), local: true do |f| %>
   
   <div>
   <%= f.label 'カテゴリーを選択してください'%>
