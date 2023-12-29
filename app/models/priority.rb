@@ -6,6 +6,7 @@ class Priority < ActiveHash::Base
     { id: 4, name: 'そのうち' }
   ]
 
-  
+  include ActiveHash::Associations
+  has_many :orders
 
 end

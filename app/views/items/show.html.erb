@@ -1,0 +1,16 @@
+在庫詳細
+
+<%= link_to '在庫一覧に戻る',  group_items_path(@item.group.id) %>
+
+<div>
+カテゴリ：<%= @item.category.name %>
+</div>
+<ul><% if @item.image.attached? %>
+    <li><%= image_tag @item.image.variant(resize: '300x200'), class: 'item-images' %></li>
+    <li>メモ：<%= @item.memo %></li>
+    <% else %>
+    <li>メモ：<%= @item.memo %></li>
+    <% end %>
+</ul>
+<%= link_to '編集', edit_group_item_path(id: @item.id) %>
+<%= link_to '削除', group_item_path(id: @item.id), data:{turbo_method: :delete} %>

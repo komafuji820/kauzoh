@@ -1,19 +1,28 @@
 在庫リスト
 
-<%= link_to '続けて投稿する', new_group_item_path(@group.id) %>
-<%= link_to 'グループページTOPへ戻る', group_path(@group.id) %>
+<% if @items.present? %>
 
-<% @items.each do |item| %>
+  <% @items.each do |item| %>
+    <div>
+    カテゴリ：<%= item.category.name %>
+    </div>
+    <ul><% if item.image.attached? %>
+        <li><%= image_tag item.image.variant(resize: '300x200'), class: 'item-images' %></li>
+        <li>メモ：<%= item.memo %></li>
+        <% else %>
+        <li>メモ：<%= item.memo %></li>
+        <% end %>
+    </ul>
+    <%= link_to '編集・削除画面へ', group_item_path(id: item.id) %>
+    <%= link_to 'お買い物リストに登録', new_group_order_path(item.group.id, id: item.id) %>
+  <% end %>
+  <%= link_to '在庫を登録する', new_group_item_path(@group.id) %>
+  <%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
+
+<% else %>
   <div>
-  カテゴリ：<%= item.category.name %>
+  まだ在庫が登録されていません
   </div>
-  <ul><% if item.image.attached? %>
-      <li><%= image_tag item.image.variant(resize: '300x200'), class: 'item-images' %></li>
-      <li>メモ：<%= item.memo %></li>
-      <% else %>
-      <li>メモ：<%= item.memo %></li>
-      <% end %>
-  </ul>
-  <%= link_to '編集', edit_group_item_path(id: item.id) %>
-  <%= link_to '削除', group_item_path(id: item.id), data:{turbo_method: :delete} %>
+  <%= link_to '在庫を登録する', new_group_item_path(@group.id) %>
+  <%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
 <% end %>

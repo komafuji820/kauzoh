@@ -5,8 +5,9 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @group = Group.find(params[:group_id])
     @order = Order.new
+    @group = Group.find(params[:group_id])
+    @item = Item.find(params[:id])
   end
 
   def create
@@ -20,6 +21,7 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
+    @item = @order.item
   end
 
   def update
@@ -40,6 +42,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:memo, :category_id, :priority_id).merge(group_id: params[:group_id])
+    params.require(:order).permit(:memo, :priority_id, :item_id).merge(group_id: params[:group_id])
   end
 end

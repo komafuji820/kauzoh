@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :group
-  has_one :order
+  has_many :orders, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions 
   belongs_to :category
