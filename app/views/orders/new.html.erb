@@ -1,4 +1,4 @@
-買い物リスト作成
+お買い物リストに登録
 <%= form_with model: @order, url: group_orders_path(@group.id), local: true do |f| %>
 
   <% if @item.image.attached? %>
@@ -8,13 +8,15 @@
     <%= @item.category.name %>
   <% end %>
 
+  <input name="order[category_id]" value=<%= @item.category_id %> type=hidden>
+
   <div>
   <%= f.label '優先度（必須）'%>
   <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"priority-select"}) %>
   </div>
 
   <div>
-  <%= f.label 'メモ（任意）'%>
+  <%= f.label 'お買い物メモ（任意）'%>
   <%= f.text_field :memo, class:"memo", placeholder:"(例)お母さん用" %>
   </div>
 

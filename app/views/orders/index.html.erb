@@ -8,13 +8,13 @@
   <ul>
   <ul><% if order.item.image.attached? %>
       <li><%= image_tag order.item.image.variant(resize: '300x200'), class: 'item-images' %></li>
-      <li>メモ：<%= order.memo %></li>
+      <li>お買い物メモ：<%= order.memo %></li>
       <li>優先度：<%= order.priority.name %></li>
-      <li>カテゴリ：<%= order.item.category.name %></li>
+      <li>カテゴリ：<%= order.category.name %></li>
       <% else %>
-      <li>メモ：<%= order.memo %></li>
+      <li>お買い物メモ：<%= order.memo %></li>
       <li>優先度：<%= order.priority.name %></li>
-      <li>カテゴリ：<%= order.item.category.name %></li>
+      <li>カテゴリ：<%= order.category.name %></li>
       <% end %>
   </ul>
   <%= link_to '編集', edit_group_order_path(id: order.id) %>
