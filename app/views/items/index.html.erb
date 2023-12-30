@@ -15,7 +15,7 @@
         <li>在庫メモ：<%= item.memo %></li>
         <% end %>
     </ul>
-    <%= link_to '編集・削除画面へ', group_item_path(id: item.id) %>
+    <%= link_to '編集する', edit_item_path(item.id) %>
     <%= link_to 'お買い物リストに登録', new_group_order_path(item.group.id, id: item.id) %>
   <% end %>
 
