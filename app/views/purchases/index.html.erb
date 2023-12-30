@@ -11,6 +11,8 @@
     <li>お買い物メモ：<%= purchase.memo %></li>
     <% if purchase.image.present? %>
       <li><%= image_tag purchase.image.variant(resize: '300x200'), class: 'purchase-image' %></li>
+    <% else %>
+      <li><%= image_tag 'noimage.jpg', :size => '300x200' %></li>
     <% end %>
   </ul>
   <%= link_to '編集', edit_purchase_path(purchase.id) %>

@@ -11,6 +11,8 @@
       <li>在庫メモ：<%= item.memo %></li>
     <% if item.image.attached? %>
       <li><%= image_tag item.image.variant(resize: '300x200'), class: 'item-images' %></li>
+    <% else %>
+      <li><%= image_tag 'noimage.jpg', :size => '300x200' %></li>
     <% end %>
     </ul>
     <%= link_to '編集する', edit_item_path(item.id) %>
