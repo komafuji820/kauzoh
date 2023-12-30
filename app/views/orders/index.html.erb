@@ -10,11 +10,26 @@
     <li>優先度：<%= order.priority.name %></li>
     <li>お買い物メモ：<%= order.memo %></li>
     <% if order.item.image.attached? %>
-      <li><%= image_tag order.item.image.variant(resize: '300x200'), class: 'item-images' %></li>
+      <li><%= image_tag order.item.image.variant(resize: '266x200'), class: 'item-images' %></li>
     <% else %>
-      <li><%= image_tag 'noimage.jpg', :size => '300x200' %></li>
+      <li><%= image_tag 'noimage.jpg', :size => '266x200', class: 'item-images' %></li>
     <% end %>
   </ul>
   <%= link_to '編集', edit_order_path(order.id) %>
   <%= link_to '削除', order_path(order.id), data:{turbo_method: :delete} %>
+<% end %>
+
+<% @purchases.each do |purchase| %>
+  <ul>
+    <li>カテゴリ：<%= purchase.category.name %></li>
+    <li>優先度：<%= purchase.priority.name %></li>
+    <li>お買い物メモ：<%= purchase.memo %></li>
+    <% if purchase.image.present? %>
+      <li><%= image_tag purchase.image.variant(resize: '266x200'), class: 'item-images' %></li>
+    <% else %>
+      <li><%= image_tag 'noimage.jpg', :size => '266x200', class: 'item-images' %></li>
+    <% end %>
+  </ul>
+  <%= link_to '編集', edit_purchase_path(purchase.id) %>
+  <%= link_to '削除', purchase_path(purchase.id), data:{turbo_method: :delete} %>
 <% end %>

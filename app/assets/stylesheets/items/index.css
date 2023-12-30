@@ -1,0 +1,6 @@
+.item-images{
+  height: 200px;
+  width: 266px;
+  object-fit: contain;
+  border: double black;
+}
