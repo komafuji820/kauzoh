@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     collection do
       get 'add_members'
     end
-    resources :items
-    resources :orders, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :items, only: [:index, :new, :create]
+    resources :orders, only: [:index, :new, :create]
   end
 
   resources :users do
@@ -17,5 +17,9 @@ Rails.application.routes.draw do
       get 'search_results'
     end
   end
+
+  resources :items, only: [:edit, :update, :destroy]
+
+  resources :orders, only: [:edit, :update, :destroy]
 
 end
