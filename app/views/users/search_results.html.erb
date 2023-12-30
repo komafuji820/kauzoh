@@ -20,11 +20,10 @@
           </div>
         <% else %>
           <p class="no-user-message">該当するユーザーはいませんでした</p>
-          <div>
-          <%= link_to '戻る', search_users_path, class:"return-link" %>
-          </div>
         <% end %>
-
+        <div>
+          <%= link_to '戻る', search_users_path, class:"return-link" %>
+        </div>
       <% end %>
     </div>
 
