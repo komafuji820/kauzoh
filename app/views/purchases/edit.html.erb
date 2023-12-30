@@ -1,4 +1,4 @@
-新規購入リストを修正
+お買い物リストを修正
 
 <div class="items-form">
 <%= form_with model: @purchase, local: true do |f| %>
@@ -20,7 +20,7 @@
   <%= f.file_field :image %>
   <div>
   <%= f.submit "修正" ,class:"edit-purchase-btn" %>
-  <%= link_to '戻る', group_purchases_path(@purchase.group.id) %>
+  <%= link_to '戻る', group_orders_path(@purchase.group.id) %>
   </div>
 <% end %>
 </div>

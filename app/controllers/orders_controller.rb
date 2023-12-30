@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
 
   def index
     @orders = @group.orders
+    @purchases = @group.purchases
   end
 
   def new
