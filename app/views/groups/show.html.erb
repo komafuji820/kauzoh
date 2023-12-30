@@ -14,6 +14,7 @@
       <ul class="group__item">
         <li><%= link_to '在庫リスト', group_items_path(@group.id), class:"check-item" %></li>
         <li><%= link_to 'お買い物リスト', group_orders_path(@group.id), class:"check-order" %></li>
+        <li><%= link_to '新規購入リスト', group_purchases_path(@group.id), class:"check-order" %></li>
       </ul>
       <ul class="group__edit">
         <li><%= link_to 'グループを編集する', "#", class:"edit-group" %></li>
