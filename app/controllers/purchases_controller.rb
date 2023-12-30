@@ -32,6 +32,12 @@ class PurchasesController < ApplicationController
     end
   end
 
+  def destroy
+    purchase = Purchase.find(params[:id])
+    purchase.destroy
+    redirect_to group_purchases_path(purchase.group.id)
+  end
+
   private
 
   def purchase_create_params

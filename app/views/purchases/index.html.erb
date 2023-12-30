@@ -14,5 +14,5 @@
     <% end %>
   </ul>
   <%= link_to '編集', edit_purchase_path(purchase.id) %>
-  <%# <%= link_to '削除', purchase_path(purchase.id), data:{turbo_method: :delete} %> %>
+  <%= link_to '削除', purchase_path(purchase.id), data:{turbo_method: :delete} %>
 <% end %>

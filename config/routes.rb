@@ -23,6 +23,6 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:edit, :update, :destroy]
 
-  resources :purchases, only: [:edit, :update]
+  resources :purchases, only: [:edit, :update, :destroy]
 
 end
