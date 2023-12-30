@@ -1,11 +1,12 @@
 class OrdersController < ApplicationController
+  before_action :find_group, only: [:index, :new]
+  before_action :find_order, only: [:edit, :update]
+
   def index
-    @group = Group.find(params[:group_id])
     @orders = @group.orders
   end
 
   def new
-    @group = Group.find(params[:group_id])
     @item = Item.find(params[:id])
     @order = Order.new
   end
@@ -22,11 +23,9 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = Order.find(params[:id])
   end
 
   def update
-    @order = Order.find(params[:id])
     if @order.update(order_update_params)
       redirect_to group_orders_path(@order.group.id)
     else
@@ -48,5 +47,13 @@ class OrdersController < ApplicationController
 
   def order_update_params
     params.require(:order).permit(:priority_id, :category_id, :memo, :item_id).merge(group_id: @order.group_id)
+  end
+
+  def find_group
+    @group = Group.find(params[:group_id])
+  end
+
+  def find_order
+    @order = Order.find(params[:id])
   end
 end
