@@ -1,7 +1,7 @@
 お買い物リストを修正
 
 <div class="items-form">
-<%= form_with model: [@item, @order], url: group_order_path(id: @order.id), local: true do |f| %>
+<%= form_with model: @order, local: true do |f| %>
   <div>
   <%= f.label 'カテゴリーを選ぶ'%>
   </div>
@@ -20,7 +20,7 @@
   <%= f.file_field :image %>
   <div>
   <%= f.submit "修正" ,class:"edit-orders-btn" %>
-  <%= link_to '戻る', group_orders_path(@item.group.id) %>
+  <%= link_to '戻る', group_orders_path(@order.group.id) %>
   </div>
 <% end %>
 </div>
