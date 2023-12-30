@@ -1,14 +1,13 @@
 お買い物リストに登録
 <%= form_with model: @order, url: group_orders_path(@group.id), local: true do |f| %>
 
-  <% if @item.image.attached? %>
-    <%= @item.category.name %>
-    <%= image_tag @item.image.variant(resize: '300x200'), class: 'item-images' %>
-  <% else %>
-    <%= @item.category.name %>
-  <% end %>
-
+  <div>
+  <%= @item.category.name %>
   <input name="order[category_id]" value=<%= @item.category_id %> type=hidden>
+  </div>
+  <% if @item.image.attached? %>  
+    <%= image_tag @item.image.variant(resize: '300x200'), class: 'item-images' %>
+  <% end %>
 
   <div>
   <%= f.label '優先度（必須）'%>

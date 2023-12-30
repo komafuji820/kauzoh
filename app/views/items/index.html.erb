@@ -1,19 +1,17 @@
 在庫リスト
 <%= link_to '在庫を登録する', new_group_item_path(@group.id) %>
+<%= link_to 'お買い物リストに戻る', group_orders_path(@group.id) %>
 <%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
 
 <% if @items.present? %>
 
   <% @items.each do |item| %>
-    <div>
-    カテゴリ：<%= item.category.name %>
-    </div>
-    <ul><% if item.image.attached? %>
-        <li>在庫メモ：<%= item.memo %></li>
-        <li><%= image_tag item.image.variant(resize: '300x200'), class: 'item-images' %></li>
-        <% else %>
-        <li>在庫メモ：<%= item.memo %></li>
-        <% end %>
+    <ul>
+      <li>カテゴリ：<%= item.category.name %></li>
+      <li>在庫メモ：<%= item.memo %></li>
+    <% if item.image.attached? %>
+      <li><%= image_tag item.image.variant(resize: '300x200'), class: 'item-images' %></li>
+    <% end %>
     </ul>
     <%= link_to '編集する', edit_item_path(item.id) %>
     <%= link_to 'お買い物リストに登録', new_group_order_path(item.group.id, id: item.id) %>
