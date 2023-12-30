@@ -5,9 +5,6 @@
   <%= @item.category.name %>
   <input name="order[category_id]" value=<%= @item.category_id %> type=hidden>
   </div>
-  <% if @item.image.attached? %>  
-    <%= image_tag @item.image.variant(resize: '300x200'), class: 'item-images' %>
-  <% end %>
 
   <div>
   <%= f.label '優先度（必須）'%>
@@ -19,6 +16,12 @@
   <%= f.text_field :memo, class:"memo", placeholder:"(例)お母さん用" %>
   </div>
 
+  <% if @item.image.attached? %>  
+    <%= image_tag @item.image.variant(resize: '300x200'), class: 'item-images' %>
+  <% else %>
+    <%= image_tag 'noimage.jpg', :size => '266x200', class: 'item-images' %>
+  <% end %>
+  
   <input name="order[item_id]" value=<%= @item.id %> type=hidden>
 
   <%= f.submit "買い物リストに登録" %>

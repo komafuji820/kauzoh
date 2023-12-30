@@ -1,7 +1,7 @@
 在庫リスト
 <%= link_to '在庫を登録する', new_group_item_path(@group.id) %>
-<%= link_to 'お買い物リストに戻る', group_orders_path(@group.id) %>
-<%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
+<%= link_to 'お買い物リストを見る', group_orders_path(@group.id) %>
+<%= link_to 'グループTOPへ', group_path(@group.id) %>
 
 <% if @items.present? %>
 
