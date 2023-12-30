@@ -5,4 +5,15 @@ class Purchase < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions 
   belongs_to :priority
   belongs_to :category
+
+  validates :priority_id, numericality: { only_integer: true, greater_than_or_equal_to: 1,less_than_or_equal_to: 4 }
+
+  validates :category_id, numericality: { only_integer: true, greater_than_or_equal_to: 1,less_than_or_equal_to: 9 }
+
+  validates :memo, presence: true, unless: :was_attached?
+
+  def was_attached?
+    self.image.attached?
+  end
+
 end
