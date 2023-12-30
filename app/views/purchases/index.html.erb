@@ -13,6 +13,6 @@
       <li><%= image_tag purchase.image.variant(resize: '300x200'), class: 'purchase-image' %></li>
     <% end %>
   </ul>
-  <%# <%= link_to '編集', edit_purchase_path(purchase.id) %> %>
+  <%= link_to '編集', edit_purchase_path(purchase.id) %>
   <%# <%= link_to '削除', purchase_path(purchase.id), data:{turbo_method: :delete} %> %>
 <% end %>

@@ -1,0 +1,26 @@
+新規購入リストを修正
+
+<div class="items-form">
+<%= form_with model: @purchase, local: true do |f| %>
+  <div>
+  <%= f.label 'カテゴリーを選ぶ'%>
+  </div>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+  <div>
+  <%= f.label '優先度（必須）'%>
+  </div>
+  <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"priority-select"}) %>
+  <div>
+  <%= f.label 'お買い物メモ（任意）'%>
+  </div>
+  <%= f.text_field :memo, class:"memo", placeholder:"(例)賞味期限は12/31" %>
+  <div>
+  <%= f.label '画像を選ぶ（任意）'%>
+  </div>
+  <%= f.file_field :image %>
+  <div>
+  <%= f.submit "修正" ,class:"edit-purchase-btn" %>
+  <%= link_to '戻る', group_purchases_path(@purchase.group.id) %>
+  </div>
+<% end %>
+</div>
