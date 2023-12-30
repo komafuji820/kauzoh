@@ -1,20 +1,16 @@
 お買い物リスト
 
 <%= link_to '在庫リストから登録', group_items_path(@group.id) %>
-<%= link_to '在庫にないものを登録', "#" %>
+<%= link_to '在庫にないものを登録', new_group_purchase_path(@group.id) %>
 <%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
 
 <% @orders.each do |order| %>
   <ul>
+    <li>カテゴリ：<%= order.category.name %></li>
+    <li>優先度：<%= order.priority.name %></li>
+    <li>お買い物メモ：<%= order.memo %></li>
     <% if order.item.image.attached? %>
-      <li>優先度：<%= order.priority.name %></li>
-      <li>カテゴリ：<%= order.category.name %></li>
-      <li>お買い物メモ：<%= order.memo %></li>
       <li><%= image_tag order.item.image.variant(resize: '300x200'), class: 'item-images' %></li>
-    <% else %>
-      <li>お買い物メモ：<%= order.memo %></li>
-      <li>優先度：<%= order.priority.name %></li>
-      <li>カテゴリ：<%= order.category.name %></li>
     <% end %>
   </ul>
   <%= link_to '編集', edit_order_path(order.id) %>

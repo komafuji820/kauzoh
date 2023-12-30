@@ -1,15 +1,17 @@
 新規購入リスト
 
 <%= link_to '在庫リストから登録', group_items_path(@group.id) %>
-<%= link_to '在庫にないものを登録', "#" %>
+<%= link_to '在庫にないものを登録', new_group_purchase_path(@group.id) %>
 <%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
 
 <% @purchases.each do |purchase| %>
   <ul>
-    <li>優先度：<%= purchase.priority.name %></li>
     <li>カテゴリ：<%= purchase.category.name %></li>
+    <li>優先度：<%= purchase.priority.name %></li>
     <li>お買い物メモ：<%= purchase.memo %></li>
-      <%# <li><%= image_tag purchase.item.image.variant(resize: '300x200'), class: 'item-images' %></li> %>
+    <% if purchase.image.present? %>
+      <li><%= image_tag purchase.image.variant(resize: '300x200'), class: 'purchase-image' %></li>
+    <% end %>
   </ul>
   <%# <%= link_to '編集', edit_purchase_path(purchase.id) %> %>
   <%# <%= link_to '削除', purchase_path(purchase.id), data:{turbo_method: :delete} %> %>

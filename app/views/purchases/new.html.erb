@@ -1,0 +1,27 @@
+新規購入リストに登録
+<%= form_with model: @purchase, url: group_purchases_path(@group.id), local: true do |f| %>
+
+  <div>
+  <%= f.label 'カテゴリ（必須）'%>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+  </div>
+
+  <div>
+  <%= f.label '優先度（必須）'%>
+  <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"priority-select"}) %>
+  </div>
+
+  <div>
+  <%= f.label 'お買い物メモ（任意）'%>
+  <%= f.text_field :memo, class:"memo", placeholder:"(例)お母さん用" %>
+  </div>
+
+  <div>
+  <%= f.label '画像を選ぶ（任意）'%>
+  <%= f.file_field :image %>
+  </div>
+
+  <%= f.submit "買い物リストに登録" %>
+
+  <%= link_to '戻る',  group_purchases_path(@group.id) %>
+<% end %>
