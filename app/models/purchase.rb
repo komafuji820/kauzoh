@@ -16,4 +16,13 @@ class Purchase < ApplicationRecord
     self.image.attached?
   end
 
+  def self.destroy_purchases(purchase_ids)
+    if purchase_ids.present?
+      purchases = Purchase.find(purchase_ids)
+      purchases.each do |purchase|
+        purchase.destroy
+      end
+    end
+  end
+
 end
