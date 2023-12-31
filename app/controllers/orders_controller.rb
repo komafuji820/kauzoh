@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :find_group, only: [:index, :new]
   before_action :find_order, only: [:edit, :update]
+  before_action :limit_access, only: [:index, :new]
 
   def index
     @orders = @group.orders
@@ -24,6 +25,9 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    unless @order.group.users.include?(current_user)
+      redirect_to root_path
+    end
   end
 
   def update
@@ -36,7 +40,9 @@ class OrdersController < ApplicationController
 
   def destroy
     order = Order.find(params[:id])
-    order.destroy
+    if order.group.users.include?(current_user)
+      order.destroy
+    end
     redirect_to group_orders_path(order.group.id)
   end
 
@@ -57,4 +63,11 @@ class OrdersController < ApplicationController
   def find_order
     @order = Order.find(params[:id])
   end
+
+  def limit_access
+    unless @group.users.include?(current_user)
+      redirect_to root_path
+    end
+  end
+
 end
