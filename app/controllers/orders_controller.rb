@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :find_group, only: [:index, :new]
+  before_action :find_group, only: [:index, :new, :destroy_checked]
   before_action :find_order, only: [:edit, :update]
   before_action :limit_access, only: [:index, :new]
 
@@ -44,6 +44,14 @@ class OrdersController < ApplicationController
       order.destroy
     end
     redirect_to group_orders_path(order.group.id)
+  end
+
+  def destroy_checked
+    if @group.users.include?(current_user)
+      Order.destroy_orders(params[:order_ids])
+      Purchase.destroy_purchases(params[:purchase_ids])
+    end
+    redirect_to group_orders_path(params[:group_id])
   end
 
   private

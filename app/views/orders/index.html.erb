@@ -4,8 +4,11 @@
 <%= link_to '在庫にないものを登録', new_group_purchase_path(@group.id) %>
 <%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
 
+<%= form_with url: "/orders/destroy_checked", method: :delete, local: true do |f| %>
+
 <% @orders.each do |order| %>
   <ul>
+    <%= check_box_tag "order_ids[]", order.id %>
     <li>カテゴリ：<%= order.category.name %></li>
     <li>優先度：<%= order.priority.name %></li>
     <li>お買い物メモ：<%= order.memo %></li>
@@ -21,6 +24,7 @@
 
 <% @purchases.each do |purchase| %>
   <ul>
+    <li><%= check_box_tag "purchase_ids[]", purchase.id %></li>
     <li>カテゴリ：<%= purchase.category.name %></li>
     <li>優先度：<%= purchase.priority.name %></li>
     <li>お買い物メモ：<%= purchase.memo %></li>
@@ -32,4 +36,10 @@
   </ul>
   <%= link_to '編集', edit_purchase_path(purchase.id) %>
   <%= link_to '削除', purchase_path(purchase.id), data:{turbo_method: :delete} %>
+<% end %>
+
+<input name="group_id" value=<%= @group.id %> type=hidden>
+<div>
+<%= f.submit '買い物完了', class:"order-btn" %>
+</div>
 <% end %>

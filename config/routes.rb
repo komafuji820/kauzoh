@@ -21,7 +21,11 @@ Rails.application.routes.draw do
 
   resources :items, only: [:edit, :update, :destroy]
 
-  resources :orders, only: [:edit, :update, :destroy]
+  resources :orders, only: [:edit, :update, :destroy] do
+    collection do
+      delete 'destroy_checked'
+    end
+  end
 
   resources :purchases, only: [:edit, :update, :destroy]
 
