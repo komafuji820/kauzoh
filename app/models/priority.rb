@@ -8,5 +8,6 @@ class Priority < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :orders
+  has_many :purchases
 
 end

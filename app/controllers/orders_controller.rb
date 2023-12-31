@@ -1,31 +1,34 @@
 class OrdersController < ApplicationController
+  before_action :find_group, only: [:index, :new]
+  before_action :find_order, only: [:edit, :update]
+
   def index
-    @group = Group.find(params[:group_id])
     @orders = @group.orders
+    @purchases = @group.purchases
   end
 
   def new
-    @group = Group.find(params[:group_id])
+    @item = Item.find(params[:id])
     @order = Order.new
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = Order.new(order_create_params)
     if @order.save
       redirect_to group_orders_path(@order.group.id)
     else
+      @group = Group.find(params[:group_id])
+      @item = Item.find(params[:id])
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @order = Order.find(params[:id])
   end
 
   def update
-    order = Order.find(params[:id])
-    if order.update(order_params)
-      redirect_to group_orders_path(order.group.id)
+    if @order.update(order_update_params)
+      redirect_to group_orders_path(@order.group.id)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,7 +42,19 @@ class OrdersController < ApplicationController
 
   private
 
-  def order_params
-    params.require(:order).permit(:memo, :category_id, :priority_id).merge(group_id: params[:group_id])
+  def order_create_params
+    params.require(:order).permit(:priority_id, :category_id, :memo, :item_id).merge(group_id: params[:group_id])
+  end
+
+  def order_update_params
+    params.require(:order).permit(:priority_id, :category_id, :memo).merge(group_id: @order.group.id)
+  end
+
+  def find_group
+    @group = Group.find(params[:group_id])
+  end
+
+  def find_order
+    @order = Order.find(params[:id])
   end
 end

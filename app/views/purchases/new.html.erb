@@ -1,26 +1,27 @@
-お買い物リストを修正
+お買い物リストに登録
+<%= form_with model: @purchase, url: group_purchases_path(@group.id), local: true do |f| %>
 
-<div class="items-form">
-<%= form_with model: @order, local: true do |f| %>
   <div>
-  <%= f.label 'カテゴリーを選ぶ'%>
-  </div>
+  <%= f.label 'カテゴリ（必須）'%>
   <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+  </div>
+
   <div>
   <%= f.label '優先度（必須）'%>
-  </div>
   <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"priority-select"}) %>
+  </div>
+
   <div>
   <%= f.label 'お買い物メモ（任意）'%>
+  <%= f.text_field :memo, class:"memo", placeholder:"(例)お母さん用" %>
   </div>
-  <%= f.text_field :memo, class:"memo", placeholder:"(例)賞味期限は12/31" %>
+
   <div>
   <%= f.label '画像を選ぶ（任意）'%>
-  </div>
   <%= f.file_field :image %>
-  <div>
-  <%= f.submit "修正" ,class:"edit-orders-btn" %>
-  <%= link_to '戻る', group_orders_path(@order.group.id) %>
   </div>
+
+  <%= f.submit "買い物リストに登録" %>
+
+  <%= link_to '戻る',  group_orders_path(@group.id) %>
 <% end %>
-</div>

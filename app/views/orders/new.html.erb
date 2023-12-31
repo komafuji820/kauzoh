@@ -1,7 +1,30 @@
-買い物リスト作成
+お買い物リストに登録
 <%= form_with model: @order, url: group_orders_path(@group.id), local: true do |f| %>
-  <%= f.text_field :memo, placeholder: "メモ" %>
-  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+
+  <div>
+  <%= @item.category.name %>
+  <input name="order[category_id]" value=<%= @item.category_id %> type=hidden>
+  </div>
+
+  <div>
+  <%= f.label '優先度（必須）'%>
   <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"priority-select"}) %>
-  <%= f.submit "買い物リスト作成" %>
+  </div>
+
+  <div>
+  <%= f.label 'お買い物メモ（任意）'%>
+  <%= f.text_field :memo, class:"memo", placeholder:"(例)お母さん用" %>
+  </div>
+
+  <% if @item.image.attached? %>  
+    <%= image_tag @item.image.variant(resize: '300x200'), class: 'item-images' %>
+  <% else %>
+    <%= image_tag 'noimage.jpg', :size => '266x200', class: 'item-images' %>
+  <% end %>
+  
+  <input name="order[item_id]" value=<%= @item.id %> type=hidden>
+
+  <%= f.submit "買い物リストに登録" %>
+
+  <%= link_to '戻る',  group_items_path(@group.id) %>
 <% end %>

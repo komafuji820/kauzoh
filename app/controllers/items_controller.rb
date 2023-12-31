@@ -1,31 +1,31 @@
 class ItemsController < ApplicationController
+  before_action :find_group, only: [:index, :new]
+  before_action :find_item, only: [:edit, :update]
+
   def index
-    @group = Group.find(params[:group_id])
     @items = @group.items
   end
 
   def new
     @item = Item.new
-    @group = Group.find(params[:group_id])
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = Item.new(item_create_params)
     if @item.save
       redirect_to group_items_path(@item.group.id)
     else
+      @group = Group.find(params[:group_id])
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.update(item_params)
-      redirect_to group_items_path(item.group.id)
+    if @item.update(item_update_params)
+      redirect_to group_items_path(@item.group.id)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,8 +39,20 @@ class ItemsController < ApplicationController
 
   private
 
-  def item_params
+  def item_create_params
     params.require(:item).permit(:image, :memo, :category_id).merge(group_id: params[:group_id])
+  end
+
+  def item_update_params
+    params.require(:item).permit(:image, :memo, :category_id).merge(group_id: @item.group.id)
+  end
+
+  def find_group
+    @group = Group.find(params[:group_id])
+  end
+
+  def find_item
+    @item = Item.find(params[:id])
   end
 
 end
