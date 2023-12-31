@@ -49,14 +49,19 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @users = @group.users
+    unless @group.users.include?(current_user)
+      redirect_to root_path
+    end
   end
 
   def destroy
     group = Group.find(params[:id])
-    group.destroy
+    if group.users.include?(current_user)
+      group.destroy
+    end
     redirect_to root_path
   end
-
+  
   private
 
   # メンバーリストに追加する時のストロングパラメータ

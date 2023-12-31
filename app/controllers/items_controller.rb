@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :find_group, only: [:index, :new]
   before_action :find_item, only: [:edit, :update]
+  before_action :limit_access, only: [:index, :new]
 
   def index
     @items = @group.items
@@ -21,6 +22,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    unless @item.group.users.include?(current_user)
+      redirect_to root_path
+    end
   end
 
   def update
@@ -33,7 +37,9 @@ class ItemsController < ApplicationController
 
   def destroy
     item = Item.find(params[:id])
-    item.destroy
+    if item.group.users.include?(current_user)
+      item.destroy
+    end
     redirect_to group_items_path(item.group.id)
   end
 
@@ -53,6 +59,12 @@ class ItemsController < ApplicationController
 
   def find_item
     @item = Item.find(params[:id])
+  end
+
+  def limit_access
+    unless @group.users.include?(current_user)
+      redirect_to root_path
+    end
   end
 
 end

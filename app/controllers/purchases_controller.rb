@@ -3,6 +3,9 @@ class PurchasesController < ApplicationController
 
   def new
     @group = Group.find(params[:group_id])
+    unless @group.users.include?(current_user)
+      redirect_to root_path
+    end
     @purchase = Purchase.new
   end
 
@@ -17,6 +20,9 @@ class PurchasesController < ApplicationController
   end
 
   def edit
+    unless @purchase.group.users.include?(current_user)
+      redirect_to root_path
+    end
   end
 
   def update
@@ -29,7 +35,9 @@ class PurchasesController < ApplicationController
 
   def destroy
     purchase = Purchase.find(params[:id])
-    purchase.destroy
+    if purchase.group.users.include?(current_user)
+      purchase.destroy
+    end
     redirect_to group_orders_path(purchase.group.id)
   end
 
