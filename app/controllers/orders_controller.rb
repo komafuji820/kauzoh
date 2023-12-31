@@ -46,6 +46,22 @@ class OrdersController < ApplicationController
     redirect_to group_orders_path(order.group.id)
   end
 
+  def destroy_checked
+    if params[:order_ids].present?
+      orders = Order.find(params[:order_ids])
+      orders.each do |order|
+        order.destroy
+      end
+    end
+    if params[:purchase_ids].present?
+      purchases = Purchase.find(params[:purchase_ids])
+      purchases.each do |purchase|
+        purchase.destroy
+      end
+    end
+    redirect_to group_orders_path(params[:group_id])
+  end
+
   private
 
   def order_create_params
