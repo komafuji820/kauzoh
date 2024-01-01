@@ -1,11 +1,13 @@
-<div class="main__wrapper">
-  <div class="main__section">
-
-    <div class="group__message">
-      <p>ようこそ、<%= current_user.nickname %>さん！</p>
-      <p>家族や友達と買い物リストを共有しよう！</p>
-    </div>
-    
+<div class="group-wrapper">
+  <div class="group-wrapper__side-bar">
+    <%= render partial: 'lists' %>
   </div>
-  <%= render partial: 'list' %>
+
+  <div class="group-wrapper__main">
+    <%= render partial: 'create_group_link' %>
+    <div class="group-wrapper__main-body">
+      <p class="group-wrapper__main-text">家族や友達と、買いたいものを共有しよう！</p>
+    </div>
+  </div>
+
 </div>

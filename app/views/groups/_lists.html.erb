@@ -1,0 +1,8 @@
+<div class="group-wrapper__side-bar-title">
+  グループリスト
+</div>
+<ul class="group-wrapper__side-bar-lists">
+  <% current_user.groups.each do |group| %>
+    <li><%= link_to group.name, group_path(group.id), class:"group-wrapper__side-bar-name" %>
+  <% end %>
+</ul>

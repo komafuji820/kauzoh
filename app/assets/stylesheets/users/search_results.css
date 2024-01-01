@@ -1,33 +1,27 @@
 /* ユーザー検索結果表示ページ */
-.search-results__section{
+.search-results__form{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
   padding: 20px;
 }
 
-.search-results{
+.search-results__index{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.select-user{
+.search-results__text{
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.select-user-name{
+.search-results__select-user{
   margin-top: 10px;
 }
 
-.search-results__form{
-  width: 100%;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-.actions{
+.search-results__actions{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,20 +34,16 @@
   background-color: skyblue;
   padding: 0 10px;
   border-radius: 5px;
-}
-
-.no-user-message{
   margin-bottom: 20px;
-  font-size: 18px;
 }
 
-.return-link{
+.search-results__return-btn{
   font-family: 'BIZ UDPGothic', sans-serif;
-  text-decoration: none;
-  color: black;
   font-size: 15px;
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
+  text-decoration: none;
+  color: black;  
   border: solid;
 }
