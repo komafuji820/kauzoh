@@ -10,10 +10,9 @@
       <div class="search-user__title">
         家族・友達を検索
       </div>
-
-      <div class="search-user__form">  
-        <%= form_with url: search_results_users_path, method: :get, local: true do |f| %>
-
+ 
+      <%= form_with url: search_results_users_path, method: :get, local: true do |f| %>
+        <div class="search-user__form"> 
           <div class="search-user__field">
             <%= f.label '登録のニックネームまたはメールアドレスで検索できます' %><br>
             <%= f.text_field :keyword, autofocus: true, placeholder: "ユーザーを検索", class:"search-user__input" %>
@@ -22,9 +21,8 @@
           <div class="search-user__actions">
             <%= f.submit "検索", class:'search-user__btn' %>
           </div>
-
-        <% end %>
-      </div>
+        </div>
+      <% end %>
 
     </div>
   </div>

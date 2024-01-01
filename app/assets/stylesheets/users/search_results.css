@@ -3,9 +3,6 @@
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
   padding: 20px;
-}
-
-.search-results__index{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +10,7 @@
 }
 
 .search-results__text{
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 15px;
 }
 

@@ -7,52 +7,36 @@
 }
 
 .create-group__member-list{
-  margin-bottom: 20px;
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
   padding: 20px;
-}
-
-.create-group__text{
-  font-size: 18px;
-  text-align: center;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .create-group__member-name{
   margin-top: 15px;
-  font-size: 18px;
 }
 
 .create-group__member-name li{
   list-style: inside;
 }
 
-.create-group__input{
-  margin-bottom: 20px;
+.create-group__field{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
-  padding: 10px 20px;
-}
-
-.create-group__field{
+  padding: 20px;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 
-.create-group__text{
-  font-size: 16px;
-}
-
-.create-group__input-name{
-  font-size: 16px;
-}
-
-.create-group__field{
-  width: 100%;
+.create-group__input{
   font-size: 15px;
-  margin: 20px 0 10px;
+  margin-bottom: 10px;
 }
 
 .create-group__actions{
@@ -71,7 +55,6 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: solid;
-  margin-bottom: 10px;
 }
 
 .create-group__return-btn{

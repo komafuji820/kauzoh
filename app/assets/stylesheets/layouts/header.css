@@ -34,6 +34,7 @@
 }
 
 .header__nav-username{
+  color: darkslateblue;
   text-decoration: none;
   letter-spacing: 3px;
 }

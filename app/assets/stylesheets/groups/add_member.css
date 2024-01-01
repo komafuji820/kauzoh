@@ -3,16 +3,15 @@
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
   padding: 20px;
+  font-size: 16px;
 }
 
 .add-members__title{
-  font-size: 18px;
   text-align: center;
 }
 
 .add-members__name{
   margin-top: 15px;
-  font-size: 18px;
   list-style: inside;
 }
 
