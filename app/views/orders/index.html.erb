@@ -4,6 +4,27 @@
 <%= link_to '在庫にないものを登録', new_group_purchase_path(@group.id) %>
 <%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
 
+<div class="calculate-unit-price">
+  <% 3.times do |index| %>
+    <div class="calculate-box">
+    <% idx = index + 1%>
+      <div><%= idx %>つめの商品</div>
+      <div class="calculate-box__field">
+        <label for="price<%= idx %>">価格：</label>
+        <input type="number" id="price<%= idx %>" name="price<%= idx %>">円
+      </div>
+      <div class="calculate-box__field">
+        <label for="unit<%= idx %>">個数（重さ・枚数）：</label>
+        <input type="number" id="unit<%= idx %>" name="unit<%= idx %>">
+      </div>
+      <div class="calculate-box__field">
+        <label for="unit-price<%= idx %>", class="unit-price">単価：</label>
+        <span id="unit-price<%= idx%>"></span>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 <%= form_with url: "/orders/destroy_checked", method: :delete, local: true do |f| %>
 
 <% @orders.each do |order| %>

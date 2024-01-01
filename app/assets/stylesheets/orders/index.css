@@ -1,0 +1,9 @@
+.calculate-box{
+  display: flex;
+  margin: 10px;
+  line-height: 20px;
+}
+
+.calculate-box__field{
+  margin-left: 20px;
+}
