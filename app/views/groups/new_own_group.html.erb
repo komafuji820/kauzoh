@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="wrapper__side-bar">
+    <%= render partial: 'lists' %>
+  </div>
+
+  <div class="wrapper__main">
+    <%= render partial: 'nav_bar' %>
+    <div class="wrapper__main-body">
+      
+      <%= form_with model: @group, url: create_own_group_groups_path, local: true do |f| %>
+        <div class="create-group__form">
+          
+          <div class="create-group__member-list">
+            <div class="create-group__text">
+              <%= "自分１人のグループを作成" %>
+            </div>
+          </div>
+
+          <div class="create-group__field">
+            <%= f.label 'グループ名を入力してください' %><br>
+            <%= f.text_field :name, autocomplete: "name", autofocus: true, placeholder: '(例)自分専用', class:"create-group__input" %>
+            <input name="group[user_ids][]" value=<%= current_user.id %> type="hidden">
+
+            <div class="create-group__actions">
+            <%= f.submit "グループを作成", class:"create-group__btn" %>
+            </div>
+
+          </div>
+          
+        </div>
+      <% end %>
+      <%= link_to 'ユーザー検索に戻る', search_users_path, class:"create-group__return-btn"  %>
+
+    </div>
+  </div>
+</div>

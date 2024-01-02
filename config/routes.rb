@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :groups, only: [:index, :new, :create, :show, :destroy] do
     collection do
       get 'add_members'
+      get 'new_own_group'
+      post 'create_own_group'
     end
     resources :items, only: [:index, :new, :create]
     resources :orders, only: [:index, :new, :create]

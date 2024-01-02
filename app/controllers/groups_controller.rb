@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
   def index
   end
 
+  # 検索したユーザーをメンバーリストに追加する
   def add_members
     # メンバーリストに追加したユーザーのインスタンス変数を生成
     @users = Group.new(add_members_params)
@@ -46,6 +47,21 @@ class GroupsController < ApplicationController
     end
   end
 
+  # ユーザー1人だけのグループを作成する
+  def new_own_group
+    @group = Group.new
+  end
+
+  # ユーザー1人だけのグループの保存
+  def create_own_group
+    @group = Group.new(own_group_params)
+    if @group.save
+      redirect_to root_path
+    else
+      render :new_own_group, status: :unprocessable_entity
+    end
+  end
+
   def show
     @group = Group.find(params[:id])
     @users = @group.users
@@ -71,6 +87,12 @@ class GroupsController < ApplicationController
 
   # グループ作成時のストロングパラメータ
   def group_params 
+    params.require(:group).permit(:name, user_ids:[])
+  end
+
+  # 1人グループ作成時のストロングパラメータ
+  def own_group_params
+    # 中間テーブルにもデータを保存するため、user_ids:[]となっている
     params.require(:group).permit(:name, user_ids:[])
   end
   
