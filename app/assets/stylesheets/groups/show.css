@@ -1,11 +1,4 @@
 /* グループ詳細画面 */
-.group-wrapper__current-group{
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  color: darkslateblue;
-}
-
 .group-detail{
   padding: 10px 30px 20px;
   font-size: 16px;

@@ -1,0 +1,38 @@
+/* 登録フォームの中身を中央揃えにする */
+.new-item__form{
+  background-color: rgb(249, 223, 238);
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.new-item__title{
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.new-item__field{
+  font-size: 16px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.new-item__input{
+  margin-top: 5px;
+}
+
+.new-item__btn{
+  font-family: 'BIZ UDPGothic', sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  background-color: skyblue;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid;
+}

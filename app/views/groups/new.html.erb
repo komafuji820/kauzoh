@@ -1,11 +1,11 @@
-<div class="group-wrapper">
-  <div class="group-wrapper__side-bar">
+<div class="wrapper">
+  <div class="wrapper__side-bar">
     <%= render partial: 'lists' %>
   </div>
 
-  <div class="group-wrapper__main">
+  <div class="wrapper__main">
     <%= render partial: 'create_group_link' %>
-    <div class="group-wrapper__main-body">
+    <div class="wrapper__main-body">
       
       <%= form_with model: @group, local: true do |f| %>
         <div class="create-group__form">

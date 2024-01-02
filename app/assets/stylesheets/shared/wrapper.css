@@ -1,14 +1,14 @@
-/* グループ機能・メイン画面全体 */
-.group-wrapper{
+/* メイン画面全体 */
+.wrapper{
   height: calc(100vh - 40px - 20px);
   display: flex;
   justify-content: center;
 }
 
-/* 画面左のグループリスト */
-.group-wrapper__side-bar{
+/* グループリストの表示 */
+.wrapper__side-bar{
   width: 200px;
-  background-color: lightgoldenrodyellow;
+  background-color: lemonchiffon;
   padding: 15px 30px 0;
   overflow: auto;
   color: darkslateblue;
@@ -17,13 +17,13 @@
   text-shadow: 1px 1px 1px white;
 }
 
-.group-wrapper__side-bar-title{
+.wrapper__side-bar-title{
   font-size: 20px;  
   border-bottom: double;
   margin-bottom: 10px;
 }
 
-.group-wrapper__side-bar-name{
+.wrapper__side-bar-name{
   font-size: 18px;
   text-decoration: none;
   margin-bottom: 10px;
@@ -34,18 +34,14 @@
 }
 
 /* 画面中央・メイン部分全体 */
-.group-wrapper__main{
+.wrapper__main{
   width: calc(100vw - 200px);
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* flex-direction: column; */
 }
 
-/* 画面中央・メイン部分の中のグループ作成リンク */
-.group-wrapper__main-head{
+/* グループ作成ナビ */
+.wrapper__main-head{
   line-height: 30px;
-  background-color: antiquewhite;
+  background-color: lightyellow;
   display: flex;
   justify-content: end;
   padding-right: 40px;
@@ -54,8 +50,20 @@
   text-shadow: 1px 1px 1px white;
 }
 
-/* 画面中央・メイン部分の中のグループ作成以外の部分 */
-.group-wrapper__main-body{
+.wrapper__current-group{
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: darkslateblue;
+}
+
+.wrapper__main-link{
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+/* 画面中央・グループ作成ナビ下の部分 */
+.wrapper__main-body{
   height: calc(100vh - 40px - 20px - 30px);
   display: flex;
   justify-content: center;

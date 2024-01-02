@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @group = @item.group
     unless @item.group.users.include?(current_user)
       redirect_to root_path
     end

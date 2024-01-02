@@ -1,29 +1,50 @@
-在庫登録
-
-<div class="items-form">
-<%= form_with model: @item, url: group_items_path(@group.id), local: true do |f| %>
-  
-  <div>
-  <%= f.label 'カテゴリを選ぶ（必須）'%>
-  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
-  </div>
-  
-  <div>
-  <%= f.label '在庫メモ（任意）'%>
-  <%= f.text_field :memo, class:"memo", placeholder:"(例)賞味期限は12/31" %>
+<div class="wrapper">
+  <div class="wrapper__side-bar">
+    <%= render partial: '/groups/lists' %>
   </div>
 
-  <div>
-  <%= f.label '画像を選ぶ（任意）'%>
-  <%= f.file_field :image %>
-  </div>
+  <div class="wrapper__main">
+    <%= render partial: '/groups/current_group_name' %>
+    <div class="wrapper__main-body">
 
-  <div>
-  <%= f.submit '登録', class:"add-items-btn" %>
+      <div class="item__main-body">
+        <div class="item-nav-bar">
+          <%= render partial: 'nav-bar' %>
+        </div>
+
+        <div class="new-item__wrapper">
+
+          <%# <div class="new-item__container"> %>
+          
+            <%= form_with model: @item, url: group_items_path(@group.id), local: true do |f| %>
+              <div class="new-item__form">
+              
+                <div class="new-item__title"><%= '在庫登録' %></div>
+
+                <div class="new-item__field">
+                  <%= f.label '（必須）カテゴリを選ぶ' %>
+                  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"new-item__input"}) %>
+                </div>
+                
+                <div class="new-item__field">
+                  <%= f.label '（どちらか必須）在庫メモまたは画像' %>
+                  <%= f.text_field :memo, class:"memo", placeholder:"メモを入力", class:"new-item__input" %>
+                   <%= f.file_field :image, class:"new-item__input" %>
+                </div>
+
+                <div class="new-item__actions">
+                  <%= f.submit '登録', class:"new-item__btn" %>
+                </div>
+
+              </div>
+            <% end %>
+
+          <%# </div> %>
+          
+        </div>
+      
+      </div>
+
+    </div>
   </div>
-  
-<% end %>
 </div>
-
-<%= link_to 'グループTOPへ', group_path(@group.id) %>
-<%= link_to '在庫リストを見る', group_items_path(@group.id) %>
