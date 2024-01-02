@@ -1,0 +1,72 @@
+/* メイン画面全体 */
+.wrapper{
+  height: calc(100vh - 40px - 20px);
+  display: flex;
+  justify-content: center;
+}
+
+/* グループリストの表示 */
+.wrapper__side-bar{
+  width: 200px;
+  background-color: lemonchiffon;
+  padding: 15px 30px 0;
+  overflow: auto;
+  color: darkslateblue;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px white;
+}
+
+.wrapper__side-bar-title{
+  font-size: 20px;  
+  border-bottom: double;
+  margin-bottom: 10px;
+}
+
+.wrapper__side-bar-name{
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  line-height: 30px;
+  letter-spacing: 5px;  
+  display: block;
+  background: linear-gradient(transparent 60%, #ddaf16 60%);
+}
+
+/* 画面中央・メイン部分全体 */
+.wrapper__main{
+  width: calc(100vw - 200px);
+}
+
+/* グループ作成ナビ */
+.wrapper__main-head{
+  line-height: 30px;
+  background-color: lightyellow;
+  display: flex;
+  justify-content: end;
+  padding-right: 40px;
+  color: darkslateblue;
+  font-size: 16px;
+  text-shadow: 1px 1px 1px white;
+}
+
+.wrapper__current-group{
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: darkslateblue;
+}
+
+.wrapper__main-link{
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+/* 画面中央・グループ作成ナビ下の部分 */
+.wrapper__main-body{
+  height: calc(100vh - 40px - 20px - 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

@@ -1,28 +1,29 @@
-<div class="main__wrapper">
-  <div class="main__section">
-
-    <div class="search__user-title">
-        家族・友達を検索
-    </div>
-    <div class="search__user-section">  
-
-      <%= form_with url: search_results_users_path, local: true, method: :get, class: "search__user" do |f| %>
-
-        <div class="search__user-explain">
-        <%= f.label '登録のニックネームまたはメールアドレスで検索できます' %>
-        </div>
-
-        <div class="field">
-        <%= f.text_field :keyword, autofocus: true, placeholder: "ユーザーを検索", class: "search__user-form" %>
-        </div>
-
-        <div class="actions">
-        <%= f.submit "検索", class:'search__user-btn' %>
-        </div>
-
-      <% end %>
-    </div>
-    
+<div class="wrapper">
+  <div class="wrapper__side-bar">
+    <%= render partial: '/groups/lists' %>
   </div>
-  <%= render partial: '/groups/list' %>
+
+  <div class="wrapper__main">
+    <%= render partial: '/groups/create_group_link' %>
+    <div class="wrapper__main-body">
+      
+      <div class="search-user__title">
+        家族・友達を検索
+      </div>
+ 
+      <%= form_with url: search_results_users_path, method: :get, local: true do |f| %>
+        <div class="search-user__form"> 
+          <div class="search-user__field">
+            <%= f.label '登録のニックネームまたはメールアドレスで検索できます' %><br>
+            <%= f.text_field :keyword, autofocus: true, placeholder: "ユーザーを検索", class:"search-user__input" %>
+          </div>
+
+          <div class="search-user__actions">
+            <%= f.submit "検索", class:'search-user__btn' %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
 </div>

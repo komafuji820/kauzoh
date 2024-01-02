@@ -1,52 +1,40 @@
-/* グループ名入力画面 */
-.create-group__form{
+/* 在庫編集フォームを中心に持ってくる */
+.edit-item__container{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
-.create-group__member-list{
+/* 編集フォームの中身を中央揃えにする */
+.edit-item__form{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
   padding: 20px;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.create-group__member-name{
-  margin-top: 15px;
-}
-
-.create-group__member-name li{
-  list-style: inside;
-}
-
-.create-group__field{
-  background-color: rgb(249, 223, 238);
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-.create-group__input{
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-.create-group__actions{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.create-group__btn{
+.edit-item__title{
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.edit-item__field{
+  font-size: 16px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.edit-item__input{
+  margin-top: 5px;
+}
+
+.edit-item__btn{
   font-family: 'BIZ UDPGothic', sans-serif;
   text-decoration: none;
   color: black;
@@ -57,13 +45,14 @@
   border: solid;
 }
 
-.create-group__return-btn{
+.edit-item__link{
   font-family: 'BIZ UDPGothic', sans-serif;
   text-decoration: none;
   color: black;
   font-size: 15px;
-  background-color: skyblue;
+  background-color: red;
   padding: 5px 10px;
   border-radius: 5px;
   border: solid;
+  margin-left: 10px;
 }

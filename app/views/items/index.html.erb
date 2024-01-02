@@ -1,27 +1,42 @@
-在庫リスト
-<%= link_to '在庫を登録する', new_group_item_path(@group.id) %>
-<%= link_to 'お買い物リストを見る', group_orders_path(@group.id) %>
-<%= link_to 'グループTOPへ', group_path(@group.id) %>
-
-<% if @items.present? %>
-
-  <% @items.each do |item| %>
-    <ul>
-      <li>カテゴリ：<%= item.category.name %></li>
-      <li>在庫メモ：<%= item.memo %></li>
-    <% if item.image.attached? %>
-      <li><%= image_tag item.image.variant(resize: '266x200'), class: 'item-images' %></li>
-    <% else %>
-      <li><%= image_tag 'noimage.jpg', :size => '266x200', class: 'item-images' %></li>
-    <% end %>
-    </ul>
-    <%= link_to '編集する', edit_item_path(item.id) %>
-    <%= link_to 'お買い物リストに登録', new_group_order_path(item.group.id, id: item.id) %>
-  <% end %>
-
-<% else %>
-  <div>
-  在庫はありません
+<div class="wrapper">
+  <div class="wrapper__side-bar">
+    <%= render partial: '/groups/lists' %>
   </div>
-  
-<% end %>
+
+  <div class="wrapper__main">
+    <%= render partial: '/groups/current_group_name' %>
+    <div class="wrapper__main-body">
+
+      <div class="item__main-body">
+        <div class="item-nav-bar">
+          <%= render partial: 'nav-bar' %>
+        </div>
+
+        <div class="item__wrapper">
+
+          <% if @items.present? %>
+            <% @items.each do |item| %>
+            <div class="item__content">
+              <ul class="item__detail">
+                <li class="item__category">カテゴリ：<%= item.category.name %></li>
+                <li class="item__memo">在庫メモ：<%= item.memo %></li>
+              <% if item.image.attached? %>
+                <li><%= image_tag item.image.variant(resize: '240x180'), class:'item__image' %></li>
+              <% else %>
+                <li><%= image_tag 'noimage.jpg', :size => '240x180', class:'item__image' %></li>
+              <% end %>
+              <div class="item__buttons">
+                <%= link_to '編集する', edit_item_path(item.id), class:'item__btn' %>
+                <%= link_to 'お買い物リストに登録', new_group_order_path(item.group.id, id: item.id), class:'item__btn' %>
+              </div>
+              </ul>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -3,18 +3,17 @@
   height: 40px;
   width: 100vw;
   background-color: pink;
-  padding: 0 40px;
   display: flex;
   justify-content: space-between;
+  padding: 0 40px;
 }
 
 /* タイトル部分 */
-.header__title-section{
+.header__title{
   line-height: 40px;
-  display: flex;
 }
 
-.header__title{
+.header__title-text{
   color: darkslateblue;
   font-size: 25px;
   text-decoration: none;
@@ -23,30 +22,26 @@
   letter-spacing: 1px;
 }
 
-.header__user-name{
-  color: darkslateblue;
-  font-size: 18px;
-  text-decoration: none;
-  font-family: 'BIZ UDPGothic', sans-serif;
-  text-shadow: 1px 1px 1px white;
-  margin-left: 50px;
-  letter-spacing: 3px;
-}
-
-/* ログアウト・ログイン＆新規登録 */
-.header__nav-section{
+/* 新規登録・ログイン、ユーザー名・ログアウト */
+.header__nav{
   line-height: 40px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'BIZ UDPGothic', sans-serif;
+  color: darkslateblue;
+  text-shadow: 1px 1px 1px white;
   display: flex;
   justify-content: space-between;
 }
 
-.header__link{
+.header__nav-username{
+  color: darkslateblue;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+.header__nav-link{
   margin-left: 30px;
   text-decoration: none;
-  color: darkslateblue;
-  text-shadow: 1px 1px 1px white;
   letter-spacing: 1px;
 }
 

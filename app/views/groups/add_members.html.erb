@@ -1,19 +1,26 @@
-<div class="main__wrapper">
-  <div class="main__section">
-    
-    <div class="add-members__section">
-      <p class="add-members__title">メンバーリスト</p>
-      <% @members.each do |member| %>
-        <ul class="add-members__name">
-          <li><%= "#{member.nickname} : #{member.email}" %></li>
-        </ul>
-      <% end %>
-      <ul class="actions">
-        <li><%= link_to 'このメンバーとグループを作成', new_group_path, class:"add-members__link" %></li>
-        <li><%= link_to '他のユーザーも検索する', search_users_path, class:"return-link" %></li>
-      </ul>
-    </div>
-
+<div class="wrapper">
+  <div class="wrapper__side-bar">
+    <%= render partial: 'lists' %>
   </div>
-  <%= render partial: 'list' %>
+
+  <div class="wrapper__main">
+    <%= render partial: 'create_group_link' %>
+    <div class="wrapper__main-body">
+      
+      <div class="add-members__form">
+        <p class="add-members__title">メンバーリスト</p>
+        <% @members.each do |member| %>
+          <ul class="add-members__name">
+            <li><%= "#{member.nickname} : #{member.email}" %></li>
+          </ul>
+        <% end %>
+        <ul class="add-members__actions">
+          <li><%= link_to 'このメンバーとグループを作成', new_group_path, class:"add-members__btn" %></li>
+          <li><%= link_to '他のユーザーも検索する', search_users_path, class:"add-members__return-btn" %></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
 </div>

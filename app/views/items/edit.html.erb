@@ -1,25 +1,51 @@
-在庫を修正
+<div class="wrapper">
+  <div class="wrapper__side-bar">
+    <%= render partial: '/groups/lists' %>
+  </div>
 
-<div class="items-form">
-<%= form_with model: @item, local: true do |f| %>
-  <div>
-  <%= f.label 'カテゴリーを選ぶ'%>
+  <div class="wrapper__main">
+    <%= render partial: '/groups/current_group_name' %>
+    <div class="wrapper__main-body">
+
+      <div class="item__main-body">
+        <div class="item-nav-bar">
+          <%= render partial: 'nav-bar' %>
+        </div>
+
+        <div class="edit-item__wrapper">
+
+          <%# <div class="edit-item__container"> %>
+          
+            <%= form_with model: @item, local: true do |f| %>
+              <div class="edit-item__form">
+              
+                <div class="edit-item__title"><%= '在庫を修正' %></div>
+
+                <div class="edit-item__field">
+                  <%= f.label 'カテゴリを選ぶ'%>
+                  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"edit-item__input"}) %>
+                </div>
+                
+                <div class="edit-item__field">
+                  <%= f.label '在庫メモまたは画像' %>
+                  <%= f.text_field :memo, class:"memo", placeholder:"メモを入力", class:"edit-item__input" %>
+                   <%= f.file_field :image, class:"edit-item__input" %>
+                </div>
+
+                <div class="edit-item__actions">
+                  <%= f.submit '修正', class:"edit-item__btn" %>
+                  <%= link_to '削除', item_path(@item.id), data:{turbo_method: :delete}, class:"edit-item__link" %>
+                </div>
+
+              </div>
+            <% end %>
+
+          <%# </div> %>
+          
+        </div>
+      
+      </div>
+
+    </div>
   </div>
-  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
-  <div>
-  <%= f.label '在庫メモ（任意）'%>
-  </div>
-  <%= f.text_field :memo, class:"memo", placeholder:"(例)賞味期限は12/31" %>
-  <div>
-  <%= f.label '画像を選ぶ（任意）'%>
-  </div>
-  <%= f.file_field :image %>
-  <div>
-  <%= f.submit "修正" ,class:"add-items-btn" %>
-  </div>
-<% end %>
 </div>
-
-<%= link_to '削除する', item_path(@item.id), data:{turbo_method: :delete} %>
-
-<%= link_to '戻る', group_items_path(@item.group.id) %>

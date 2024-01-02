@@ -1,45 +1,48 @@
-<div class="main__wrapper">
-  <div class="main__section">
+<div class="wrapper">
+  <div class="wrapper__side-bar">
+    <%= render partial: 'lists' %>
+  </div>
 
-    <div class="create-group__section">
-      <%= form_with model: @group, class:"create-group", local: true do |f| %>
-        
-        <div class="create-group__member-list">
-        <% if @members.present? %>
-          <div class="create-group__explain">
-            <p>このメンバーとグループを作成</p>
-          </div>
-          <% @members.each do |member| %>  
-            <div class="create-group__member-name">
-            <%= member.nickname %>
-            <%= member.email %>
-            <input name="group[user_ids][]" value=<%= member.id %> type="hidden">
+  <div class="wrapper__main">
+    <%= render partial: 'create_group_link' %>
+    <div class="wrapper__main-body">
+      
+      <%= form_with model: @group, local: true do |f| %>
+        <div class="create-group__form">
+          
+          <div class="create-group__member-list">
+          <% if @members.present? %>
+            <div class="create-group__text">
+              <p>このメンバーとグループを作成</p>
+            </div>
+            <% @members.each do |member| %>  
+              <ul class="create-group__member-name">
+                <li><%= member.nickname %>：<%= member.email %></li>
+              </ul>
+              <input name="group[user_ids][]" value=<%= member.id %> type="hidden">
+            <% end %>
+          <% else %>
+            <div class="create-group__text">
+              <%= "#{current_user.nickname}さんだけのグループを作成" %>
             </div>
           <% end %>
-        <% else %>
-        <div class="create-group__explain">
-          <%= "#{current_user.nickname}さんだけのグループを作成" %>
-        </div>
-        <% end %>
-        </div>
-
-        <div class="create-group__input-name">
-          <div class="field">
-          <%= f.label 'グループ名を入力してください', class:"create-group__input" %><br />
-          <%= f.text_field :name, autocomplete: "name", placeholder: 'グループ名', class:"create-group__form" %>
-
-          <input name="group[user_ids][]" value=<%= current_user.id %> type="hidden">
           </div>
 
-          <div class="actions">
-          <%= f.submit "グループを作成", class:"create-group__btn" %>
-          </div>
-        </div>
+          <div class="create-group__field">
+            <%= f.label 'グループ名を入力してください' %><br>
+            <%= f.text_field :name, autocomplete: "name", autofocus: true, placeholder: 'グループ名', class:"create-group__input" %>
+            <input name="group[user_ids][]" value=<%= current_user.id %> type="hidden">
 
+            <div class="create-group__actions">
+            <%= f.submit "グループを作成", class:"create-group__btn" %>
+            </div>
+
+          </div>
+          
+        </div>
       <% end %>
+      <%= link_to 'ユーザー検索に戻る', search_users_path, class:"create-group__return-btn"  %>
+
     </div>
-    <%= link_to 'ユーザー検索に戻る', search_users_path, class:"return-link"  %>
-    
   </div>
-  <%= render partial: 'list' %>
 </div>
