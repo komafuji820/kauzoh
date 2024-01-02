@@ -7,26 +7,18 @@
     <%= render partial: 'nav_bar' %>
     <div class="wrapper__main-body">
       
-      <%= form_with model: @group, local: true do |f| %>
+      <%= form_with model: @group, url: create_own_group_groups_path, local: true do |f| %>
         <div class="create-group__form">
           
           <div class="create-group__member-list">
-          <% if @members.present? %>
             <div class="create-group__text">
-              <p>このメンバーとグループを作成</p>
+              <%= "自分１人のグループを作成" %>
             </div>
-            <% @members.each do |member| %>  
-              <ul class="create-group__member-name">
-                <li><%= member.nickname %>：<%= member.email %></li>
-              </ul>
-              <input name="group[user_ids][]" value=<%= member.id %> type="hidden">
-            <% end %>
-          <% end %>
           </div>
 
           <div class="create-group__field">
             <%= f.label 'グループ名を入力してください' %><br>
-            <%= f.text_field :name, autocomplete: "name", autofocus: true, placeholder: 'グループ名', class:"create-group__input" %>
+            <%= f.text_field :name, autocomplete: "name", autofocus: true, placeholder: '(例)自分専用', class:"create-group__input" %>
             <input name="group[user_ids][]" value=<%= current_user.id %> type="hidden">
 
             <div class="create-group__actions">

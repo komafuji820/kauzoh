@@ -1,0 +1,7 @@
+<ul class="wrapper__main-head">
+  <% if controller.action_name == 'show' || controller.controller_name == 'items' %>
+    <li><%= link_to "現在のグループ：#{@group.name}", '#', class:"wrapper__current-group" %></li>
+  <% end %>
+  <li><%= link_to 'ユーザーとグループを作成', search_users_path, class:"wrapper__main-link" %></li>
+  <li><%= link_to '自分１人のグループを作成', new_own_group_groups_path, class:"wrapper__main-link" %></li>
+</ul>

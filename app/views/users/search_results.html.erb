@@ -4,7 +4,7 @@
   </div>
 
   <div class="wrapper__main">
-    <%= render partial: '/groups/create_group_link' %>
+    <%= render partial: '/groups/nav_bar' %>
     <div class="wrapper__main-body">
       
       <%= form_with model: @user, url: add_members_groups_path, method: :get, local: true do |f| %>
