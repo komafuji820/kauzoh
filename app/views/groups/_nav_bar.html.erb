@@ -1,5 +1,5 @@
 <ul class="wrapper__main-head">
-  <% if controller.action_name == 'show' || controller.controller_name == 'items' %>
+  <% if controller.action_name == 'show' || controller.action_name == 'calculate_unit_price' || controller.controller_name == 'items' || controller.controller_name == 'orders' || controller.controller_name == 'purchases' %>
     <li><%= link_to "現在のグループ：#{@group.name}", '#', class:"wrapper__current-group" %></li>
   <% end %>
   <li><%= link_to 'ユーザーとグループを作成', search_users_path, class:"wrapper__main-link" %></li>
