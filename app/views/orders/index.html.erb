@@ -31,7 +31,6 @@
                 </ul>
                 <div class="order__buttons">
                   <%= link_to '編集', edit_order_path(order.id), class:'order__btn' %>
-                  <%= link_to '削除', order_path(order.id), data:{turbo_method: :delete}, class:'order__delete-btn' %>
                 </div>
               </div>
             <% end %>
@@ -52,7 +51,6 @@
                 </ul>
                 <div class="order__buttons">
                   <%= link_to '編集', edit_purchase_path(purchase.id), class:'order__btn' %>
-                  <%= link_to '削除', purchase_path(purchase.id), data:{turbo_method: :delete}, class:'order__delete-btn' %>
                 </div>
               </div>
             <% end %>
