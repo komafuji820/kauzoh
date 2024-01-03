@@ -1,6 +1,6 @@
 function CalculateUnitPrice () {
 
-  for (let idx = 1; idx <= 3; idx++){
+  for (let idx = 1; idx <= 5; idx++){
     const price = document.getElementById(`price${idx}`);
     const unit = document.getElementById(`unit${idx}`);
     const unitPrice = document.getElementById(`unit-price${idx}`);
