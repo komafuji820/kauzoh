@@ -12,6 +12,9 @@
 .new-item__title{
   font-size: 20px;
   margin-bottom: 15px;
+  color: darkslateblue;
+  text-shadow: 1px 1px 1px white;
+  font-weight: bold;
 }
 
 .new-item__field{

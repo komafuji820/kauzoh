@@ -22,6 +22,7 @@
   line-height: 30px;
   color: darkslateblue;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .item-nav-bar__links{
@@ -38,7 +39,6 @@
 /* 在庫ナビ以下の画面 */
 .item__wrapper, .new-item__wrapper, .edit-item__wrapper{
   min-height: calc(100vh - 40px - 20px - 30px - 30px);
-  width: calc(100vw - 200px);
   overflow: auto;
   display: flex;
   justify-content: space-between;
