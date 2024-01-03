@@ -1,30 +1,56 @@
-お買い物リストに登録
-<%= form_with model: @order, url: group_orders_path(@group.id), local: true do |f| %>
-
-  <div>
-  <%= @item.category.name %>
-  <input name="order[category_id]" value=<%= @item.category_id %> type=hidden>
+<div class="wrapper">
+  <div class="wrapper__side-bar">
+    <%= render partial: '/groups/lists' %>
   </div>
 
-  <div>
-  <%= f.label '優先度（必須）'%>
-  <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"priority-select"}) %>
+  <div class="wrapper__main">
+    <%= render partial: '/groups/nav_bar' %>
+    <div class="wrapper__main-body">
+
+      <div class="item__main-body">
+        <div class="item-nav-bar">
+          <%= render partial: 'nav_bar' %>
+        </div>
+
+        <div class="new-order__wrapper">
+          
+          <%= form_with model: @order, url: group_orders_path(@group.id), local: true do |f| %>
+            <div class="new-order__form">
+            
+              <div class="new-order__title"><%= 'お買い物リスト登録' %></div>
+
+              <div class="new-order__field">
+                カテゴリ：<%= @item.category.name %>
+                <input name="order[category_id]" value=<%= @item.category_id %> type=hidden>
+              </div>
+
+              <div class="new-order__field">
+                <%= f.label '優先度（必須）'%>
+                <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"new-order__input"}) %>
+              </div>
+
+              <div class="new-order__field">
+                <%= f.label 'お買い物メモ（任意）'%>
+                <%= f.text_field :memo, class:"memo", placeholder:"(例)お母さん用", class:"new-order__input" %>
+              </div>
+
+              <% if @item.image.attached? %>  
+                <%= image_tag @item.image.variant(resize: '240x180'), class: 'new-order__image' %>
+              <% else %>
+                <%= image_tag 'noimage.jpg', :size => '240x180', class: 'new-order__image' %>
+              <% end %>
+
+              <input name="order[item_id]" value=<%= @item.id %> type=hidden>
+              <div class="new-order__actions">
+                <%= f.submit '登録', class:"new-order__btn" %>
+              </div>
+            </div>
+          <% end %>
+          
+        </div>
+      
+      </div>
+
+    </div>
   </div>
-
-  <div>
-  <%= f.label 'お買い物メモ（任意）'%>
-  <%= f.text_field :memo, class:"memo", placeholder:"(例)お母さん用" %>
-  </div>
-
-  <% if @item.image.attached? %>  
-    <%= image_tag @item.image.variant(resize: '300x200'), class: 'item-images' %>
-  <% else %>
-    <%= image_tag 'noimage.jpg', :size => '266x200', class: 'item-images' %>
-  <% end %>
-  
-  <input name="order[item_id]" value=<%= @item.id %> type=hidden>
-
-  <%= f.submit "買い物リストに登録" %>
-
-  <%= link_to '戻る',  group_items_path(@group.id) %>
-<% end %>
+</div>

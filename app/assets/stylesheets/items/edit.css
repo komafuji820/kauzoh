@@ -20,6 +20,9 @@
 .edit-item__title{
   font-size: 20px;
   margin-bottom: 15px;
+  color: darkslateblue;
+  text-shadow: 1px 1px 1px white;
+  font-weight: bold;
 }
 
 .edit-item__field{
@@ -34,7 +37,7 @@
   margin-top: 5px;
 }
 
-.edit-item__btn{
+.edit-item__btn, .edit-item__delete-btn{
   font-family: 'BIZ UDPGothic', sans-serif;
   text-decoration: none;
   color: black;
@@ -45,14 +48,6 @@
   border: solid;
 }
 
-.edit-item__link{
-  font-family: 'BIZ UDPGothic', sans-serif;
-  text-decoration: none;
-  color: black;
-  font-size: 15px;
+.edit-item__delete-btn{
   background-color: red;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: solid;
-  margin-left: 10px;
 }

@@ -1,66 +1,84 @@
-お買い物リスト
+<div class="wrapper">
+  <div class="wrapper__side-bar">
+    <%= render partial: '/groups/lists' %>
+  </div>
 
-<%= link_to '在庫リストから登録', group_items_path(@group.id) %>
-<%= link_to '在庫にないものを登録', new_group_purchase_path(@group.id) %>
-<%= link_to 'グループTOPへ戻る', group_path(@group.id) %>
+  <div class="wrapper__main">
+    <%= render partial: '/groups/nav_bar' %>
+    <div class="wrapper__main-body">
 
-<div class="calculate-unit-price">
-  <% 3.times do |index| %>
-    <div class="calculate-box">
-    <% idx = index + 1%>
-      <div><%= idx %>つめの商品</div>
-      <div class="calculate-box__field">
-        <label for="price<%= idx %>">価格：</label>
-        <input type="number" id="price<%= idx %>" name="price<%= idx %>">円
+      <div class="order__main-body">
+        <div class="order-nav-bar">
+          <%= render partial: 'nav_bar' %>
+        </div>
+
+        <%= form_with url: "/orders/destroy_checked", method: :delete, class:"order__form", local: true do |f| %>
+        
+          <div class="order__wrapper">
+            <% @orders.each do |order| %>
+              <div class="order__content">
+                <ul class="order__detail">
+                  <li><%= f.label "買い終わったらチェック" %>
+                      <%= check_box_tag "order_ids[]", order.id %></li>
+                  <li class="order__category">カテゴリ：<%= order.category.name %></li>
+                  <li class="order__priority">優先度：<%= order.priority.name %></li>
+                  <li class="order__memo">お買い物メモ：<%= order.memo %></li>
+                  <% if order.item.image.attached? %>
+                    <li><%= image_tag order.item.image.variant(resize: '240x180'), class: 'order__image' %></li>
+                  <% else %>
+                    <li><%= image_tag 'noimage.jpg', :size => '240x180', class: 'order__image' %></li>
+                  <% end %>
+                </ul>
+                <div class="order__buttons">
+                  <%= link_to '編集', edit_order_path(order.id), class:'order__btn' %>
+                  <%= link_to '削除', order_path(order.id), data:{turbo_method: :delete}, class:'order__delete-btn' %>
+                </div>
+              </div>
+            <% end %>
+
+            <% @purchases.each do |purchase| %>
+              <div class="order__content">
+                <ul class="order__detail">
+                  <li><%= f.label "買い終わったらチェック" %>
+                      <%= check_box_tag "purchase_ids[]", purchase.id %></li>
+                  <li class="order__category">カテゴリ：<%= purchase.category.name %></li>
+                  <li class="order__priority">優先度：<%= purchase.priority.name %></li>
+                  <li class="order__memo">お買い物メモ：<%= purchase.memo %></li>
+                  <% if purchase.image.present? %>
+                    <li><%= image_tag purchase.image.variant(resize: '240x180'), class: 'order__image' %></li>
+                  <% else %>
+                    <li><%= image_tag 'noimage.jpg', :size => '240x180', class: 'order__image' %></li>
+                  <% end %>
+                </ul>
+                <div class="order__buttons">
+                  <%= link_to '編集', edit_purchase_path(purchase.id), class:'order__btn' %>
+                  <%= link_to '削除', purchase_path(purchase.id), data:{turbo_method: :delete}, class:'order__delete-btn' %>
+                </div>
+              </div>
+            <% end %>
+
+              <input name="group_id" value=<%= @group.id %> type=hidden>
+              
+            </div>
+            <div class="order__checked">
+              <%= f.submit '買い物完了', class:"order__btn" %>
+            </div>
+          </div>
+          
+          <% end %>
+
       </div>
-      <div class="calculate-box__field">
-        <label for="unit<%= idx %>">個数（重さ・枚数）：</label>
-        <input type="number" id="unit<%= idx %>" name="unit<%= idx %>">
-      </div>
-      <div class="calculate-box__field">
-        <label for="unit-price<%= idx %>", class="unit-price">単価：</label>
-        <span id="unit-price<%= idx%>"></span>
-      </div>
+
     </div>
-  <% end %>
+  </div>
 </div>
 
-<%= form_with url: "/orders/destroy_checked", method: :delete, local: true do |f| %>
 
-<% @orders.each do |order| %>
-  <ul>
-    <%= check_box_tag "order_ids[]", order.id %>
-    <li>カテゴリ：<%= order.category.name %></li>
-    <li>優先度：<%= order.priority.name %></li>
-    <li>お買い物メモ：<%= order.memo %></li>
-    <% if order.item.image.attached? %>
-      <li><%= image_tag order.item.image.variant(resize: '266x200'), class: 'item-images' %></li>
-    <% else %>
-      <li><%= image_tag 'noimage.jpg', :size => '266x200', class: 'item-images' %></li>
-    <% end %>
-  </ul>
-  <%= link_to '編集', edit_order_path(order.id) %>
-  <%= link_to '削除', order_path(order.id), data:{turbo_method: :delete} %>
-<% end %>
 
-<% @purchases.each do |purchase| %>
-  <ul>
-    <li><%= check_box_tag "purchase_ids[]", purchase.id %></li>
-    <li>カテゴリ：<%= purchase.category.name %></li>
-    <li>優先度：<%= purchase.priority.name %></li>
-    <li>お買い物メモ：<%= purchase.memo %></li>
-    <% if purchase.image.present? %>
-      <li><%= image_tag purchase.image.variant(resize: '266x200'), class: 'item-images' %></li>
-    <% else %>
-      <li><%= image_tag 'noimage.jpg', :size => '266x200', class: 'item-images' %></li>
-    <% end %>
-  </ul>
-  <%= link_to '編集', edit_purchase_path(purchase.id) %>
-  <%= link_to '削除', purchase_path(purchase.id), data:{turbo_method: :delete} %>
-<% end %>
 
-<input name="group_id" value=<%= @group.id %> type=hidden>
-<div>
-<%= f.submit '買い物完了', class:"order-btn" %>
-</div>
-<% end %>
+
+
+
+
+
+

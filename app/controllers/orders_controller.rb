@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    @group = @order.group
     unless @order.group.users.include?(current_user)
       redirect_to root_path
     end

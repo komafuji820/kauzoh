@@ -1,0 +1,36 @@
+/* 電卓機能 */
+.calculate-section{
+  height: calc(100vh - 40px - 20px - 30px - 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculate-unit-price{
+  border-radius: 10px;
+  background-color: rgb(249, 223, 238);
+  padding: 20px;
+}
+
+.calculate-title{
+  color: darkslateblue;
+  text-shadow: 1px 1px 1px white;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.calculate-box{
+  display: flex;
+  margin: 10px;
+  line-height: 20px;
+}
+
+.calculate-box__field{
+  margin-left: 15px;
+}
+
+.calculate-text{
+  color: darkslateblue;
+  font-weight: bold;
+}

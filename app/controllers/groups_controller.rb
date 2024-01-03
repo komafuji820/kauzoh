@@ -77,6 +77,11 @@ class GroupsController < ApplicationController
     end
     redirect_to root_path
   end
+
+  # 単価計算ページ
+  def calculate_unit_price
+    @group = Group.find(params[:id])
+  end
   
   private
 

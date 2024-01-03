@@ -1,27 +1,50 @@
-お買い物リストに登録
-<%= form_with model: @purchase, url: group_purchases_path(@group.id), local: true do |f| %>
-
-  <div>
-  <%= f.label 'カテゴリ（必須）'%>
-  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+<div class="wrapper">
+  <div class="wrapper__side-bar">
+    <%= render partial: '/groups/lists' %>
   </div>
 
-  <div>
-  <%= f.label '優先度（必須）'%>
-  <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"priority-select"}) %>
+  <div class="wrapper__main">
+    <%= render partial: '/groups/nav_bar' %>
+    <div class="wrapper__main-body">
+
+      <div class="item__main-body">
+        <div class="item-nav-bar">
+          <%= render partial: '/orders/nav_bar' %>
+        </div>
+
+        <div class="new-order__wrapper">
+          
+          <%= form_with model: @purchase, url: group_purchases_path(@group.id), local: true do |f| %>
+            <div class="new-order__form">
+            
+              <div class="new-order__title"><%= 'お買い物リスト登録' %></div>
+
+              <div class="new-order__field">
+                <%= f.label 'カテゴリ（必須）'%>
+                <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"new-order__input"}) %>
+              </div>
+
+              <div class="new-order__field">
+                <%= f.label '優先度（必須）'%>
+                <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"new-order__input"}) %>
+              </div>
+
+              <div class="new-order__field">
+                <%= f.label '（どちらか必須）在庫メモまたは画像' %>
+                <%= f.text_field :memo, class:"memo", placeholder:"メモを入力", class:"new-order__input" %>
+                  <%= f.file_field :image, class:"new-order__input" %>
+              </div>
+
+              <div class="new-order__actions">
+                <%= f.submit '登録', class:"new-order__btn" %>
+              </div>
+            </div>
+          <% end %>
+          
+        </div>
+      
+      </div>
+
+    </div>
   </div>
-
-  <div>
-  <%= f.label 'お買い物メモ（任意）'%>
-  <%= f.text_field :memo, class:"memo", placeholder:"(例)お母さん用" %>
-  </div>
-
-  <div>
-  <%= f.label '画像を選ぶ（任意）'%>
-  <%= f.file_field :image %>
-  </div>
-
-  <%= f.submit "買い物リストに登録" %>
-
-  <%= link_to '戻る',  group_orders_path(@group.id) %>
-<% end %>
+</div>
