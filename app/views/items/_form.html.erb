@@ -1,0 +1,10 @@
+<div class="new-item__field">
+  <%= f.label '（必須）カテゴリを選ぶ' %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"new-item__input"}) %>
+</div>
+
+<div class="new-item__field">
+  <%= f.label '（どちらか必須）在庫メモまたは画像' %>
+  <%= f.text_field :memo, class:"memo", placeholder:"メモを入力", class:"new-item__input" %>
+    <%= f.file_field :image, class:"new-item__input" %>
+</div>

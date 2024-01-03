@@ -19,16 +19,7 @@
             
               <div class="edit-item__title"><%= '在庫を修正' %></div>
 
-              <div class="edit-item__field">
-                <%= f.label 'カテゴリを選ぶ'%>
-                <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"edit-item__input"}) %>
-              </div>
-              
-              <div class="edit-item__field">
-                <%= f.label '在庫メモまたは画像' %>
-                <%= f.text_field :memo, class:"memo", placeholder:"メモを入力", class:"edit-item__input" %>
-                  <%= f.file_field :image, class:"edit-item__input" %>
-              </div>
+              <%= render partial: 'form', locals:{ f: f } %>
 
               <div class="edit-item__actions">
                 <%= f.submit '修正', class:"edit-item__btn" %>
