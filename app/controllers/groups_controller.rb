@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :find_group, only: [:show, :calculate_unit_price]
+
   def index
   end
 
@@ -63,7 +65,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
     @users = @group.users
     unless @group.users.include?(current_user)
       redirect_to root_path
@@ -80,7 +81,6 @@ class GroupsController < ApplicationController
 
   # 単価計算ページ
   def calculate_unit_price
-    @group = Group.find(params[:id])
   end
   
   private
@@ -99,6 +99,10 @@ class GroupsController < ApplicationController
   def own_group_params
     # 中間テーブルにもデータを保存するため、user_ids:[]となっている
     params.require(:group).permit(:name, user_ids:[])
+  end
+
+  def find_group
+    @group = Group.find(params[:id])
   end
   
 end
