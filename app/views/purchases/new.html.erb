@@ -19,21 +19,7 @@
             
               <div class="new-order__title"><%= 'お買い物リスト登録' %></div>
 
-              <div class="new-order__field">
-                <%= f.label 'カテゴリ（必須）'%>
-                <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"new-order__input"}) %>
-              </div>
-
-              <div class="new-order__field">
-                <%= f.label '優先度（必須）'%>
-                <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"new-order__input"}) %>
-              </div>
-
-              <div class="new-order__field">
-                <%= f.label '（どちらか必須）在庫メモまたは画像' %>
-                <%= f.text_field :memo, class:"memo", placeholder:"メモを入力", class:"new-order__input" %>
-                  <%= f.file_field :image, class:"new-order__input" %>
-              </div>
+              <%= render partial: 'form', locals:{ f: f } %>
 
               <div class="new-order__actions">
                 <%= f.submit '登録', class:"new-order__btn" %>
