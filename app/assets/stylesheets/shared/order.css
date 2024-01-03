@@ -57,10 +57,6 @@
   align-items: center;
 }
 
-/* .new-item__wrapper, .edit-item__wrapper{
-  justify-content: center;
-} */
-
 /* アイテム数が2つのときに左寄せにする設定 */
 .order__wrapper:after{
   content: "";
