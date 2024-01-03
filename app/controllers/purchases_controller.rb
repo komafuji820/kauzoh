@@ -20,6 +20,7 @@ class PurchasesController < ApplicationController
   end
 
   def edit
+    @group = @purchase.group
     unless @purchase.group.users.include?(current_user)
       redirect_to root_path
     end
