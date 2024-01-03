@@ -14,7 +14,8 @@ function CalculateUnitPrice () {
   
       if (inputPrice && inputUnit) {
         const result = inputPrice / inputUnit;
-        unitPrice.innerHTML = `${Math.floor(result).toLocaleString()}円`;
+        // unitPrice.innerHTML = `${Math.floor(result).toLocaleString()}円`;
+        unitPrice.innerHTML = `${(result).toFixed(2).toLocaleString()}円`;
       } else if (inputPrice) {
         unitPrice.innerHTML = "個数を入力(半角)";
       } else if (inputUnit) {
