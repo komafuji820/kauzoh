@@ -9,7 +9,7 @@
 /* お買い物リスト画面ナビバー */
 .order-nav-bar{
   line-height: 30px;
-  background-color: antiquewhite;
+  background-color: rgb(218, 247, 218);
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
