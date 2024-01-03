@@ -25,13 +25,7 @@
           </div>
 
           <div class="create-group__field">
-            <%= f.label 'グループ名を入力してください' %><br>
-            <%= f.text_field :name, autocomplete: "name", autofocus: true, placeholder: 'グループ名', class:"create-group__input" %>
-            <input name="group[user_ids][]" value=<%= current_user.id %> type="hidden">
-
-            <div class="create-group__actions">
-            <%= f.submit "グループを作成", class:"create-group__btn" %>
-            </div>
+            <%= render partial: 'input_group_name', locals:{ f: f } %>
 
           </div>
           
