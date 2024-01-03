@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       get 'new_own_group'
       post 'create_own_group'
     end
+    member do
+      get 'calculate_unit_price'
+    end
     resources :items, only: [:index, :new, :create]
     resources :orders, only: [:index, :new, :create]
     resources :purchases, only: [:new, :create]
