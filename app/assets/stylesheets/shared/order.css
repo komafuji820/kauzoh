@@ -1,0 +1,71 @@
+/* お買い物リスト画面全体 */
+.order__main-body{
+  min-height: calc(100vh - 40px - 20px - 30px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* お買い物リスト画面ナビバー */
+.order-nav-bar{
+  line-height: 30px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  font-size: 14px;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  text-shadow: 1px 1px 1px white;
+}
+
+.order-nav-bar__title{
+  line-height: 30px;
+  color: darkslateblue;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.order-nav-bar__links{
+  display: flex;
+  line-height: 30px;
+}
+
+.order-nav-bar__link{
+  margin-left: 15px;
+  color: darkslateblue;
+  text-decoration: none;
+}
+
+/* お買い物リストナビ以下の画面 */
+.order__wrapper{
+  min-height: calc(100vh - 40px - 20px - 30px - 30px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.order__form{
+  overflow: auto;
+}
+
+.new-order__wrapper{
+  height: calc(100vh - 40px - 20px - 30px - 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .new-item__wrapper, .edit-item__wrapper{
+  justify-content: center;
+} */
+
+/* アイテム数が2つのときに左寄せにする設定 */
+.order__wrapper:after{
+  content: "";
+  display: block;
+  width: calc(100% / 3 - 20px);
+  height: 0;
+  margin: 10px;
+}
