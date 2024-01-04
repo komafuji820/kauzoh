@@ -4,12 +4,12 @@
   </div>
 
   <div class="wrapper__main">
-    <%= render partial: '/groups/nav_bar' %>
+    <%= render partial: '/groups/nav_bar', locals:{ group: @group } %>
     <div class="wrapper__main-body">
 
       <div class="item__main-body">
         <div class="item-nav-bar">
-          <%= render partial: 'nav_bar' %>
+          <%= render partial: 'nav_bar', locals:{ group: @group } %>
         </div>
 
         <div class="new-item__wrapper">
@@ -19,16 +19,7 @@
             
               <div class="new-item__title"><%= '在庫登録' %></div>
 
-              <div class="new-item__field">
-                <%= f.label '（必須）カテゴリを選ぶ' %>
-                <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"new-item__input"}) %>
-              </div>
-              
-              <div class="new-item__field">
-                <%= f.label '（どちらか必須）在庫メモまたは画像' %>
-                <%= f.text_field :memo, class:"memo", placeholder:"メモを入力", class:"new-item__input" %>
-                  <%= f.file_field :image, class:"new-item__input" %>
-              </div>
+              <%= render partial: 'form', locals:{ f: f } %>
 
               <div class="new-item__actions">
                 <%= f.submit '登録', class:"new-item__btn" %>

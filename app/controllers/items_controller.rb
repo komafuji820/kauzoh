@@ -32,6 +32,7 @@ class ItemsController < ApplicationController
     if @item.update(item_update_params)
       redirect_to group_items_path(@item.group.id)
     else
+      @group = @item.group
       render :edit, status: :unprocessable_entity
     end
   end

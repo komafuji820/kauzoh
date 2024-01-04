@@ -9,7 +9,7 @@
 /* 在庫画面ナビバー */
 .item-nav-bar{
   line-height: 30px;
-  background-color: antiquewhite;
+  background-color: rgb(249, 223, 238);
   display: flex;
   justify-content: space-between;
   padding: 0 40px;

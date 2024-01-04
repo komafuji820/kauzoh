@@ -1,6 +1,6 @@
 /* 登録フォームの中身を中央揃えにする */
 .new-order__form{
-  background-color: rgb(249, 223, 238);
+  background-color: rgb(218, 247, 218);
   border-radius: 5px;
   padding: 20px 50px;
   display: flex;

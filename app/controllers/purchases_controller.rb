@@ -30,6 +30,7 @@ class PurchasesController < ApplicationController
     if @purchase.update(purchase_update_params)
       redirect_to group_orders_path(@purchase.group.id)
     else
+      @group = @purchase.group
       render :edit, status: :unprocessable_entity
     end
   end

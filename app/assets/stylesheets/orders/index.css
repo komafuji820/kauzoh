@@ -4,7 +4,7 @@
   margin: 10px;
   padding: 15px;
   border-radius: 10px;
-  background-color: rgb(249, 223, 238);
+  background-color: rgb(218, 247, 218);
 }
 
 .order__category, .order__priority, .order__memo{
@@ -22,8 +22,7 @@
 
 .order__buttons{
   display: flex;
-  justify-content: space-between;
-  padding: 0 50px;
+  justify-content: center;
 }
 
 .order__btn, .order__delete-btn{

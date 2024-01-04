@@ -4,18 +4,18 @@
   </div>
 
   <div class="wrapper__main">
-    <%= render partial: 'nav_bar' %>
+    <%= render partial: 'nav_bar', locals:{ group: @group } %>
     <div class="wrapper__main-body">
 
       <div class="order__main-body">
         <div class="order-nav-bar">
-          <%= render partial: '/orders/nav_bar' %>
+          <%= render partial: 'orders/nav_bar', locals:{ group: @group } %>
         </div>
 
         <div class="calculate-section">
           <div class="calculate-unit-price">
             <div class="calculate-title">
-              商品の単価を比較できます
+              商品の単価を同時に比較できます（５つまで）
             </div>
             <% 5.times do |index| %>
               <div class="calculate-box">

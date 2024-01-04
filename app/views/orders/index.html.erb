@@ -4,12 +4,12 @@
   </div>
 
   <div class="wrapper__main">
-    <%= render partial: '/groups/nav_bar' %>
+    <%= render partial: '/groups/nav_bar', locals:{ group: @group } %>
     <div class="wrapper__main-body">
 
       <div class="order__main-body">
         <div class="order-nav-bar">
-          <%= render partial: 'nav_bar' %>
+          <%= render partial: 'nav_bar', locals:{ group: @group } %>
         </div>
 
         <%= form_with url: "/orders/destroy_checked", method: :delete, class:"order__form", local: true do |f| %>
@@ -31,7 +31,6 @@
                 </ul>
                 <div class="order__buttons">
                   <%= link_to '編集', edit_order_path(order.id), class:'order__btn' %>
-                  <%= link_to '削除', order_path(order.id), data:{turbo_method: :delete}, class:'order__delete-btn' %>
                 </div>
               </div>
             <% end %>
@@ -52,7 +51,6 @@
                 </ul>
                 <div class="order__buttons">
                   <%= link_to '編集', edit_purchase_path(purchase.id), class:'order__btn' %>
-                  <%= link_to '削除', purchase_path(purchase.id), data:{turbo_method: :delete}, class:'order__delete-btn' %>
                 </div>
               </div>
             <% end %>

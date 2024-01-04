@@ -9,17 +9,17 @@
 
     <div class="field">
       <%= f.label 'ニックネーム（10文字以内）' %><br />
-      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "（例）太郎", maxlength: 10, class:"sign-up-form"%>
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "ニックネーム", maxlength: 10, class:"sign-up-form"%>
     </div>
 
     <div class="field">
       <%= f.label 'メールアドレス' %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "（例）taro@gmail.com", class:"sign-up-form" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class:"sign-up-form" %>
     </div>
 
     <div class="field">
-      <%= f.label "パスワード（半角#{@minimum_password_length}文字以上）" %><br />
-      <%= f.password_field :password, autocomplete: "new-password", placeholder: "英数字を両方使用", class:"sign-up-form" %>
+      <%= f.label "パスワード（半角英数を両方使用。#{@minimum_password_length}文字以上）" %><br />
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class:"sign-up-form" %>
     </div>
 
     <div class="field">
