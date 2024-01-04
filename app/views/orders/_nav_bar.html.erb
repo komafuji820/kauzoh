@@ -2,7 +2,7 @@
   <%= link_to 'お買い物リスト', group_orders_path(group.id), class:"order-nav-bar__link" %>
 </div>
 <ul class="order-nav-bar__links">
-  <li><%= link_to '在庫リストへ（在庫から登録）', group_items_path(group.id), class:"order-nav-bar__link" %></li>
-  <li><%= link_to '在庫にないものを登録', new_group_purchase_path(group.id), class:"order-nav-bar__link" %></li>
+  <li><%= link_to 'お買い物リスト登録', new_group_purchase_path(group.id), class:"order-nav-bar__link" %></li>
+  <li><%= link_to '在庫リストへ', group_items_path(@group.id), class:"order-nav-bar__link" %></li>
   <li><%= link_to '単価を比較する', calculate_unit_price_group_path(group.id), class:"order-nav-bar__link" %></li>
 </ul>

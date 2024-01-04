@@ -14,11 +14,14 @@
 
         <div class="new-order__wrapper">
           
+          <div class="new-order__title">
+            <%= 'お買い物リスト登録' %>
+            <%= link_to '在庫から選ぶときはこちら', group_items_path(@group.id), class:"new-order__link" %>
+          </div>
+
           <%= form_with model: @purchase, url: group_purchases_path(@group.id), local: true do |f| %>
             <div class="new-order__form">
             
-              <div class="new-order__title"><%= 'お買い物リスト登録' %></div>
-
               <%= render partial: 'form', locals:{ f: f } %>
 
               <div class="new-order__actions">

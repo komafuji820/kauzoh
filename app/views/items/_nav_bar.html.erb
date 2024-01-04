@@ -2,6 +2,6 @@
   <%= link_to '在庫リスト', group_items_path(group.id), class:"item-nav-bar__link" %>
 </div>
 <ul class="item-nav-bar__links">
-  <li><%= link_to 'お買い物リストへ', group_orders_path(group.id), class:"item-nav-bar__link" %></li>
   <li><%= link_to '在庫を登録する', new_group_item_path(group.id), class:"item-nav-bar__link" %></li>
+  <li><%= link_to 'お買い物リストへ', group_orders_path(group.id), class:"item-nav-bar__link" %></li>
 </ul>

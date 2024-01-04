@@ -10,7 +10,7 @@
 .edit-order__form{
   background-color: rgb(218, 247, 218);
   border-radius: 5px;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,15 +19,15 @@
 
 .edit-order__title{
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: darkslateblue;
   text-shadow: 1px 1px 1px white;
   font-weight: bold;
 }
 
-.edit-order__field{
+.edit-order__field, .edit-order__image-field{
   font-size: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -35,6 +35,20 @@
 
 .edit-order__input{
   margin-top: 5px;
+}
+
+.edit-order__image-field{
+  align-items: center;
+  font-size: 10px;
+}
+
+.edit-order__image{
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+  background-color: white;
+  border: double black;
+  margin-bottom: 5px;
 }
 
 .edit-order__btn, .edit-order__delete-btn{
