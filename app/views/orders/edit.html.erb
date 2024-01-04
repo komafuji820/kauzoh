@@ -25,14 +25,24 @@
               </div>
 
               <div class="edit-order__field">
-              <%= f.label '優先度（必須）'%>
-              <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"edit-order__input"}) %>
+                <%= f.label '優先度（必須）'%>
+                <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, {class:"edit-order__input"}) %>
               </div>
               
               <div class="edit-order__field">
-                <%= f.label '在庫メモまたは画像' %>
+                <%= f.label '在庫メモ' %>
                 <%= f.text_field :memo, class:"memo", placeholder:"メモを入力", class:"edit-order__input" %>
-                  <%= f.file_field :image, class:"edit-order__input" %>
+              </div>
+
+              <div class="edit-order__image-field">
+                <% if @order.item.image.attached? %>  
+                  <%= image_tag @order.item.image.variant(resize: '240x180'), class: 'edit-order__image' %>
+                <% else %>
+                  <%= image_tag 'noimage.jpg', :size => '240x180', class: 'edit-order__image' %>
+                <% end %>
+                <p class="edit-order__input">
+                  ※画像を変更するときは、在庫リストの画像を修正してください
+                </p>
               </div>
 
               <div class="edit-order__actions">
