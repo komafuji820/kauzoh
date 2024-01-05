@@ -11,22 +11,25 @@
 
 .group-detail__name{
   text-shadow: 1px 1px 1px white;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 30px;
   text-align: center;
   font-weight: bold;
   text-decoration: none;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   background: linear-gradient(transparent 60%, #ddaf16 60%);
-  margin-bottom: 20px;
+}
+
+.group-detail__members, .group-detail__contents, .group-detail__edit{
+  font-size: 16px;
+  margin-top: 20px;
 }
 
 .group-detail__members{
-  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .group-detail__contents{
-  margin-bottom: 20px;
   list-style: inside;
 }
 
