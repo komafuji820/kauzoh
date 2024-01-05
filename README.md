@@ -14,8 +14,8 @@
   - Basic認証のユーザー名 admin
   - Basic認証のパスワード noah1015
   - テスト用ユーザー
-    - ニックネーム：花子 メールアドレス：hanako@test.com パスワード：123abc
-    - ニックネーム：太郎 メールアドレス：taro@test.com   パスワード：456def
+    - ニックネーム：花子 メールアドレス：hanako@test.com パスワード：111aaa
+    - ニックネーム：太郎 メールアドレス：taro@test.com   パスワード：222bbb
 
 # 利用方法
 ## グループの作成
@@ -55,8 +55,6 @@
 - 商品パッケージのデザインが変わったり、似たようなデザインがあったりすると、どれを買えばいいか迷ってしまう。
 - 夫に買い物を頼むときに、どうお願いしたら良いかが難しい。写真を見せられたら早い。
 - 買い物に行く前に在庫をチェックするが、逐一メモするのが面倒。
-
-
 - 物価高なので、単価が一番安いものがどれかをすぐに判別できたら便利。
 
 ## 考えた解決策
@@ -69,7 +67,6 @@
 # 洗い出した要件
   [要件定義シート](https://docs.google.com/spreadsheets/d/1Wq31HyNciqkcuxKOvnWm7vC5wkqVue3XJPCpaQlHjaU/edit#gid=104149554)
 
-
 <!-- # 実装した機能についての画像やGIFおよびその説明※ -->
 
 # 実装予定の機能
@@ -79,7 +76,7 @@
   - お買い物リストを更新した場合に、グループのメンバーに通知が行く機能
 
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/083982cae0b533eab312c057e90e6414.png)](https://gyazo.com/083982cae0b533eab312c057e90e6414)
+[![Image from Gyazo](https://i.gyazo.com/c40f700e5268e1c33ba431c0ee111ca5.png)](https://gyazo.com/c40f700e5268e1c33ba431c0ee111ca5)
 
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/3a0d440d18985dc35b0571c37c4506b5.png)](https://gyazo.com/3a0d440d18985dc35b0571c37c4506b5)
