@@ -171,14 +171,12 @@
 | memo        | string     |                                |
 | group       | references | null: false, foreign_key: true |
 | item        | references | null: false, foreign_key: true |
-| category_id | integer    | null: false                    |
 | priority_id | integer    | null: false                    |
 
 ### Association
 
 - belongs_to :group
 - belongs_to :item
-- belongs_to :category
 - belongs_to :priority
 
 ## purchases テーブル
