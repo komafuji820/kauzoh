@@ -1,14 +1,17 @@
 /* グループ詳細画面 */
 .group-detail{
   padding: 10px 30px 20px;
-  font-size: 16px;
   background-color: rgb(249, 223, 238);
   border-radius: 10px;
+}
+
+.group-detail__name, .group-detail__members, .group-detail__link{
   color: darkslateblue;
-  text-shadow: 1px 1px 1px white;
 }
 
 .group-detail__name{
+  text-shadow: 1px 1px 1px white;
+  font-size: 16px;
   line-height: 30px;
   text-align: center;
   font-weight: bold;
@@ -37,5 +40,4 @@
 
 .group-detail__link{
   text-decoration: none;
-  color: darkslateblue;
 }

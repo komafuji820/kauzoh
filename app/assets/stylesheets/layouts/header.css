@@ -15,33 +15,31 @@
 
 .header__title-text{
   color: darkslateblue;
+  text-shadow: 1px 1px 1px white;
   font-size: 25px;
   text-decoration: none;
   font-family: 'Prata', serif;
-  text-shadow: 1px 1px 1px white;
   letter-spacing: 1px;
 }
 
 /* 新規登録・ログイン、ユーザー名・ログアウト */
 .header__nav{
   line-height: 40px;
-  font-size: 16px;
-  font-family: 'BIZ UDPGothic', sans-serif;
-  color: darkslateblue;
-  text-shadow: 1px 1px 1px white;
   display: flex;
   justify-content: space-between;
 }
 
-.header__nav-username{
+.header__nav-username, .header__nav-link{
   color: darkslateblue;
+  text-shadow: 1px 1px 1px white;
   text-decoration: none;
+  font-size: 16px;
+  font-family: 'BIZ UDPGothic', sans-serif;
   letter-spacing: 3px;
 }
 
 .header__nav-link{
   margin-left: 30px;
-  text-decoration: none;
   letter-spacing: 1px;
 }
 
