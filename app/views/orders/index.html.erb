@@ -20,7 +20,7 @@
                 <ul class="order__detail">
                   <li><%= f.label "買い終わったらチェック" %>
                       <%= check_box_tag "order_ids[]", order.id %></li>
-                  <li class="order__category">カテゴリ：<%= order.category.name %></li>
+                  <li class="order__category">カテゴリ：<%= order.item.category.name %></li>
                   <li class="order__priority">優先度：<%= order.priority.name %></li>
                   <li class="order__memo">お買い物メモ：<%= order.memo %></li>
                   <% if order.item.image.attached? %>

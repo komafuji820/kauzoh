@@ -58,7 +58,7 @@ class OrdersController < ApplicationController
   private
 
   def order_create_params
-    params.require(:order).permit(:priority_id, :category_id, :memo, :item_id).merge(group_id: params[:group_id])
+    params.require(:order).permit(:priority_id, :memo, :item_id).merge(group_id: params[:group_id])
   end
 
   def order_update_params
