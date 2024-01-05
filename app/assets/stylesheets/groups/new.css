@@ -46,18 +46,7 @@
   flex-direction: column;
 }
 
-.create-group__btn{
-  font-family: 'BIZ UDPGothic', sans-serif;
-  text-decoration: none;
-  color: black;
-  font-size: 15px;
-  background-color: skyblue;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: solid;
-}
-
-.create-group__return-btn{
+.create-group__btn, .create-group__return-btn{
   font-family: 'BIZ UDPGothic', sans-serif;
   text-decoration: none;
   color: black;
