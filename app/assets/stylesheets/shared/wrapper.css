@@ -11,22 +11,24 @@
   background-color: lemonchiffon;
   padding: 15px 30px 0;
   overflow: auto;
-  color: darkslateblue;
   text-align: center;
-  font-weight: bold;
+}
+
+.wrapper__side-bar-title, .wrapper__side-bar-name{
+  color: darkslateblue;
   text-shadow: 1px 1px 1px white;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .wrapper__side-bar-title{
   font-size: 20px;  
   border-bottom: double;
-  margin-bottom: 10px;
 }
 
 .wrapper__side-bar-name{
   font-size: 18px;
   text-decoration: none;
-  margin-bottom: 10px;
   line-height: 30px;
   letter-spacing: 5px;  
   display: block;
@@ -45,20 +47,21 @@
   display: flex;
   justify-content: end;
   padding-right: 40px;
+}
+
+.wrapper__current-group, .wrapper__main-link{
   color: darkslateblue;
-  font-size: 16px;
   text-shadow: 1px 1px 1px white;
+  text-decoration: none;
 }
 
 .wrapper__current-group{
   font-size: 18px;
   font-weight: bold;
-  text-decoration: none;
-  color: darkslateblue;
 }
 
 .wrapper__main-link{
-  text-decoration: none;
+  font-size: 16px;
   margin-left: 30px;
 }
 

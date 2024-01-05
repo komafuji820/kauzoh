@@ -27,18 +27,7 @@
   margin-top: 25px;
 }
 
-.add-members__btn{
-  font-family: 'BIZ UDPGothic', sans-serif;
-  text-decoration: none;
-  color: black;
-  font-size: 15px;
-  background-color: skyblue;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: solid;
-}
-
-.add-members__return-btn{
+.add-members__btn, .add-members__return-btn{
   font-family: 'BIZ UDPGothic', sans-serif;
   text-decoration: none;
   color: black;

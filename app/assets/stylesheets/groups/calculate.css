@@ -12,8 +12,11 @@
   padding: 20px;
 }
 
-.calculate-title{
+.calculate-title, .calculate-text{
   color: darkslateblue;
+}
+
+.calculate-title{
   text-shadow: 1px 1px 1px white;
   text-align: center;
   font-weight: bold;
@@ -28,9 +31,4 @@
 
 .calculate-box__field{
   margin-left: 15px;
-}
-
-.calculate-text{
-  color: darkslateblue;
-  font-weight: bold;
 }

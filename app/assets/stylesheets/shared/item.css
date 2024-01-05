@@ -13,27 +13,27 @@
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
-  font-size: 14px;
-  font-family: 'BIZ UDPGothic', sans-serif;
-  text-shadow: 1px 1px 1px white;
 }
 
-.item-nav-bar__title{
-  line-height: 30px;
+.item-nav-bar__title-text, .item-nav-bar__link{
   color: darkslateblue;
+  text-shadow: 1px 1px 1px white;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  text-decoration: none;
+}
+
+.item-nav-bar__title-text{
   font-size: 18px;
   font-weight: bold;
 }
 
 .item-nav-bar__links{
   display: flex;
-  line-height: 30px;
 }
 
 .item-nav-bar__link{
+  font-size: 14px;
   margin-left: 15px;
-  color: darkslateblue;
-  text-decoration: none;
 }
 
 /* 在庫ナビ以下の画面 */
