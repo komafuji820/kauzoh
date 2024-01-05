@@ -20,8 +20,7 @@
               <div class="edit-order__title"><%= 'お買い物リストを修正' %></div>
 
               <div class="edit-order__field">
-                <%= f.label 'カテゴリを選ぶ'%>
-                <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"edit-order__input"}) %>
+                カテゴリ：<%= @order.item.category.name %>
               </div>
 
               <div class="edit-order__field">
@@ -41,7 +40,7 @@
                   <%= image_tag 'noimage.jpg', :size => '240x180', class: 'edit-order__image' %>
                 <% end %>
                 <p class="edit-order__input">
-                  ※画像を変更するときは、在庫リストの画像を修正してください
+                  ※カテゴリ/画像は、在庫リストのデータを修正してください
                 </p>
               </div>
 
