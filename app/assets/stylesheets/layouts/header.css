@@ -44,33 +44,19 @@
 
 /* スマホ表示時 */
 @media (max-width: 599px) {
-    /* ヘッダー全体 */
+
+  /* ヘッダー全体 */
   .header{
-    height: 30px;
+    height: 40px;
     padding: 0 20px;
   }
 
-  /* タイトル部分 */
-  .header__title-section{
-    line-height: 30px;
+  .header__title-text{
+    font-size: 21px;
   }
 
-  .header__title{
-    font-size: 18px;
-  }
-
-  .header__user-name{
-    font-size: 15px;
-    margin-left: 20px;
-  }
-
-  /* ログアウト・ログイン＆新規登録 */
-  .header__nav-section{
-    line-height: 30px;
-    font-size: 12px;
-  }
-
-  .header__link{
+  .header__nav-link{
+    font-size: 14px;
     margin-left: 15px;
   }
 
