@@ -47,3 +47,28 @@
 .group-detail__link{
   text-decoration: none;
 }
+
+/* スマホ表示 */
+@media (max-width: 599px) {
+
+  /* グループ詳細フォーム外枠 */
+  .group-detail{
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  /* グループ詳細フォーム内側 */
+
+  /* グループ名 */
+  .group-detail__name{
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  /* メンバー・コンテンツ・編集リンク */
+  .group-detail__members, .group-detail__contents, .group-detail__edit{
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+}

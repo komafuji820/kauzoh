@@ -51,3 +51,33 @@
   border-radius: 5px;
   border: solid;
 }
+
+/* スマホ表示 */
+@media (max-width: 599px) {
+
+  /* メンバーリスト表示フォーム */
+  .create-group__member-list{
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .create-group__member-name{
+    margin-top: 10px;
+  }
+
+  /* グループ名入力フォーム */
+  .create-group__field{
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .create-group__input{
+    font-size: 13px;
+  }
+
+  .create-group__btn, .create-group__return-btn{
+    font-size: 13px;
+    padding: 5px;
+  }
+
+}
