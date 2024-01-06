@@ -1,4 +1,6 @@
-/* 在庫一覧 */
+/* 在庫一覧画面 */
+
+/* 在庫表示フォーム外枠 */
 .item__content{
   width: calc(100% / 3 - 20px);
   margin: 10px;
@@ -7,6 +9,7 @@
   background-color: rgb(249, 223, 238);
 }
 
+/* 在庫表示フォーム内側 */
 .item__category, .item__memo{
   margin-bottom: 5px;
 }
@@ -30,9 +33,21 @@
   font-family: 'BIZ UDPGothic', sans-serif;
   text-decoration: none;
   color: black;
-  font-size: 11px;
+  font-size: 10px;
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
   border: solid;
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  /* 在庫一覧画面 */
+
+  /* 在庫表示フォーム外枠 */
+  .item__content{
+    width: calc(100% - 20px);
+  }
+
 }

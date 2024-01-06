@@ -1,11 +1,13 @@
-/* サインアップフォーム全体・サインインフォーム全体 */
+/* ヘッダー・フッターを除く画面全体 */
 .sign-up-wrapper, .sign-in-wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 40px - 18px);
+  flex-direction: column;
+  height: calc(100vh - 40px - 20px);
 }
 
+/* 新規登録・ログインのタイトル */
 .sign-up-title, .sign-in-title{
   font-size: 25px;
   font-family: 'BIZ UDPGothic', sans-serif;
@@ -13,79 +15,73 @@
   margin-bottom: 10px;
 }
 
+/* 入力フォーム外枠 */
 .new_user{
   background-color: rgb(249, 223, 238);
   border-radius: 10px;
-  font-family: 'BIZ UDPGothic', sans-serif;
-  font-size: 15px;
-  padding: 10px 10px 20px;
+  padding: 20px 30px;
 }
 
-.sign-up-flash-message, .sign-in-flash-message{
-  text-align: center;
-  margin: 7px 0;
-  color: red;
-}
-
+/* 入力フォーム内部 */
 .field{
-  margin: 10px 20px 10px;
+  font-size: 16px;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  margin-bottom: 15px;
 }
 
 .sign-up-form, .sign-in-form{
   width: 100%;
   font-size: 15px;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
 .actions{
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .sign-up-btn, .sign-in-btn{
-  height: 30px;
-  width: 50%;
-  font-family: 'BIZ UDPGothic', sans-serif;
   font-size: 15px;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  height: 30px;
+  padding: 5px;
   background-color: skyblue;
   border-radius: 5px;
 }
 
+/* エラーメッセージ */
+.flash-message{
+  text-align: center;
+  margin-bottom: 5px;
+  color: red;
+}
+
 /* スマホ表示時 */
 @media (max-width: 599px) {
-  .sign-up-wrapper, .sign-in-wrapper{
-    height: calc(100vh - 32px - 14px);
-  }
-  
+
+  /* 新規登録・ログインのタイトル */
   .sign-up-title, .sign-in-title{
-    font-size: 20px;
-    margin-bottom: 8px;
+    font-size: 23px;
   }
-  
+
+  /* 入力フォーム外枠 */
   .new_user{
-    border-radius: 8px;
-    font-size: 12px;
-    padding: 8px 8px 16px;
+    padding: 15px 25px;
   }
-  
-  .sign-up-flash-message, .sign-in-flash-message{
-    margin: 5px 0;
-  }
-  
+
+  /* 入力フォーム内部 */
   .field{
-    margin: 8px 16px 8px;
+    font-size: 14px;
+    margin-bottom: 13px;
   }
-  
+
   .sign-up-form, .sign-in-form{
-    font-size: 12px;
-    margin-top: 2px;
+    font-size: 13px;
   }
-    
+
   .sign-up-btn, .sign-in-btn{
-    height: 24px;
-    font-size: 12px;
-    border-radius: 4px;
+    font-size: 13px;
+    height: 28px;
   }
 
 }

@@ -8,6 +8,7 @@
 
 /* 在庫画面ナビバー */
 .item-nav-bar{
+  height: 30px;
   line-height: 30px;
   background-color: rgb(249, 223, 238);
   display: flex;
@@ -36,7 +37,7 @@
   margin-left: 15px;
 }
 
-/* 在庫ナビ以下の画面 */
+/* 在庫ナビバーを除く画面 */
 .item__wrapper, .new-item__wrapper, .edit-item__wrapper{
   min-height: calc(100vh - 40px - 20px - 30px - 30px);
   overflow: auto;
@@ -58,4 +59,39 @@
   width: calc(100% / 3 - 20px);
   height: 0;
   margin: 10px;
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  /* 在庫画面全体 */
+  .item__main-body{
+    min-height: calc(100vh - 40px - 20px - 100px);
+  }
+
+  /* 在庫画面ナビバー */
+  .item-nav-bar{
+    display: flex;
+    align-items: center;
+    height: 100px;
+  }
+
+  .item-nav-bar__title-text{
+    font-size: 14px;
+  }
+
+  .item-nav-bar__links{
+    flex-direction: column;
+  }
+
+  .item-nav-bar__link{
+    font-size: 12px;
+  }
+
+  /* 在庫ナビバーを除く画面 */
+  .item__wrapper, .new-item__wrapper, .edit-item__wrapper{
+    min-height: calc(100vh - 40px - 20px - 100px - 100px);
+    padding: 10px;
+  }
+  
 }

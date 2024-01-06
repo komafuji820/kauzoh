@@ -1,4 +1,6 @@
 /* 電卓機能 */
+
+/* 電卓機能メイン画面 */
 .calculate-section{
   height: calc(100vh - 40px - 20px - 30px - 30px);
   display: flex;
@@ -6,12 +8,14 @@
   align-items: center;
 }
 
+/* 電卓機能フォーム外枠 */
 .calculate-unit-price{
   border-radius: 10px;
   background-color: rgb(218, 247, 218);
   padding: 20px;
 }
 
+/* 電卓機能フォーム内側 */
 .calculate-title, .calculate-text{
   color: darkslateblue;
 }

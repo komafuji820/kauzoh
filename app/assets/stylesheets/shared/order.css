@@ -8,6 +8,7 @@
 
 /* お買い物リスト画面ナビバー */
 .order-nav-bar{
+  height: 30px;
   line-height: 30px;
   background-color: rgb(218, 247, 218);
   display: flex;
@@ -36,7 +37,7 @@
   margin-left: 15px;
 }
 
-/* お買い物リストナビ以下の画面 */
+/* お買い物リストナビを除く画面 */
 .order__wrapper{
   min-height: calc(100vh - 40px - 20px - 30px - 30px);
   display: flex;
@@ -51,7 +52,7 @@
 }
 
 .new-order__wrapper{
-  height: calc(100vh - 40px - 20px - 30px - 30px);
+  min-height: calc(100vh - 40px - 20px - 30px - 30px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,4 +66,38 @@
   width: calc(100% / 3 - 20px);
   height: 0;
   margin: 10px;
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  /* お買い物リスト画面全体 */
+  .order__main-body{
+    min-height: calc(100vh - 40px - 20px - 100px);
+  }
+
+  /* お買い物リスト画面ナビバー */
+  .order-nav-bar{
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  .order-nav-bar__title-text{
+    font-size: 14px;
+  }
+
+  .order-nav-bar__links{
+    flex-direction: column;
+  }
+
+  .order-nav-bar__link{
+    font-size: 12px;
+  }
+
+  /* お買い物リストナビを除く画面 */
+  .order__wrapper, .new-order__wrapper{
+    min-height: calc(100vh - 40px - 20px - 100px - 100px);
+  }
+
 }

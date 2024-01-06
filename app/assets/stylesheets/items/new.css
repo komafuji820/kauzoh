@@ -1,4 +1,4 @@
-/* 登録フォームの中身を中央揃えにする */
+/* 登録フォーム外枠 */
 .new-item__form{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
@@ -9,11 +9,12 @@
   flex-direction: column;
 }
 
+/* 登録フォーム内側 */
 .new-item__title{
-  font-size: 20px;
-  margin-bottom: 15px;
   color: darkslateblue;
   text-shadow: 1px 1px 1px white;
+  font-size: 20px;
+  margin-bottom: 15px;
   font-weight: bold;
 }
 
@@ -38,4 +39,23 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: solid;
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  
+  /* 登録フォーム内側 */
+  .new-item__title{
+    font-size: 16px;
+  }
+
+  .new-item__field{
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .new-item__btn{
+    font-size: 13px;
+  }
+
 }

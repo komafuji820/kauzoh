@@ -1,4 +1,4 @@
-/* 登録フォームの中身を中央揃えにする */
+/* 登録フォーム外枠 */
 .new-order__form{
   background-color: rgb(218, 247, 218);
   border-radius: 5px;
@@ -11,22 +11,23 @@
 
 .new-order__title{
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: darkslateblue;
   text-shadow: 1px 1px 1px white;
   font-weight: bold;
 }
 
+/* 登録フォーム内側 */
 .new-order__field{
   font-size: 16px;
   margin-bottom: 10px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 
 .new-order__input{
   margin-top: 5px;
+  font-size: 14px;
 }
 
 .new-order__image{
@@ -42,7 +43,7 @@
   font-family: 'BIZ UDPGothic', sans-serif;
   text-decoration: none;
   color: black;
-  font-size: 15px;
+  font-size: 14px;
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
@@ -50,6 +51,34 @@
 }
 
 .new-order__link{
-  margin-bottom: 10px;
   background-color: rgb(249, 223, 238);
+  margin-bottom: 10px;
+}
+
+.new-order__link-text{
+  text-decoration: none;
+  color: black;
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  
+    /* 登録フォーム外枠 */
+  .new-order__form{
+    padding: 20px;
+  }
+
+  .new-order__title{
+    font-size: 18px;
+  }
+
+  /* 登録フォーム内側 */
+  .new-order__field{
+    font-size: 14px;
+  }
+
+  .new-order__input, .new-order__btn, .new-order__link{
+    font-size: 12px;
+  }
+
 }

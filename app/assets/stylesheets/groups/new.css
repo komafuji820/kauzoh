@@ -6,10 +6,11 @@
   flex-direction: column;
 }
 
+/* メンバーリスト表示フォーム */
 .create-group__member-list{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
-  padding: 20px;
+  padding: 20px 30px;
   margin-bottom: 10px;
   font-size: 16px;
 }
@@ -22,10 +23,11 @@
   list-style: inside;
 }
 
+/* グループ名入力フォーム */
 .create-group__field{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
-  padding: 20px;
+  padding: 20px 30px;
   font-size: 16px;
   display: flex;
   justify-content: center;
@@ -39,13 +41,6 @@
   margin-bottom: 10px;
 }
 
-.create-group__actions{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .create-group__btn, .create-group__return-btn{
   font-family: 'BIZ UDPGothic', sans-serif;
   text-decoration: none;
@@ -55,4 +50,34 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: solid;
+}
+
+/* スマホ表示 */
+@media (max-width: 599px) {
+
+  /* メンバーリスト表示フォーム */
+  .create-group__member-list{
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .create-group__member-name{
+    margin-top: 10px;
+  }
+
+  /* グループ名入力フォーム */
+  .create-group__field{
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .create-group__input{
+    font-size: 13px;
+  }
+
+  .create-group__btn, .create-group__return-btn{
+    font-size: 13px;
+    padding: 5px;
+  }
+
 }

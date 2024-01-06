@@ -1,6 +1,16 @@
-/* メインテキスト */
+/* TOPページメインテキスト */
 .group-wrapper__main-text{
   font-size: 22px;
   color: darkslateblue;
   font-family: 'BIZ UDPGothic', sans-serif;
+}
+
+/* スマホ表示 */
+@media (max-width: 599px) {
+
+  /* TOPページメインテキスト */
+  .group-wrapper__main-text{
+    font-size: 13px;
+  }
+
 }

@@ -1,27 +1,20 @@
-/* 在庫編集フォームを中心に持ってくる */
-.edit-item__container{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 編集フォームの中身を中央揃えにする */
+/* 編集フォーム外枠 */
 .edit-item__form{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
-  padding: 20px;
+  padding: 20px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+/* 編集フォーム内部 */
 .edit-item__title{
-  font-size: 20px;
-  margin-bottom: 15px;
   color: darkslateblue;
   text-shadow: 1px 1px 1px white;
+  font-size: 20px;
+  margin-bottom: 15px;
   font-weight: bold;
 }
 
@@ -38,4 +31,24 @@
 
 .edit-item__delete-btn{
   background-color: red;
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  /* 編集フォーム外枠 */
+  .edit-item__form{
+    border-radius: 5px;
+    padding: 20px 15px;
+  }
+
+  /* 編集フォーム内部 */
+  .edit-item__title{
+    font-size: 18px;
+  }
+
+  .edit-item__btn, .edit-item__delete-btn{
+    font-size: 13px;
+  }
+
 }

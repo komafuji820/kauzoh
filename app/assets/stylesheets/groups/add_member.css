@@ -1,16 +1,20 @@
-/* ユーザー検索結果表示ページ */
+/* メンバーリスト表示ページ */
+
+/* メンバーリスト表示フォーム外枠 */
 .add-members__form{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
   padding: 20px;
-  font-size: 16px;
 }
 
+/* メンバーリスト表示フォーム内部 */
 .add-members__title{
   text-align: center;
+  font-size: 18px;
 }
 
 .add-members__name{
+  font-size: 16px;
   margin-top: 15px;
   list-style: inside;
 }
@@ -36,4 +40,30 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: solid;
+}
+
+/* スマホ表示 */
+@media (max-width: 599px) {
+
+  /* メンバーリスト表示ページ */
+
+  /* メンバーリスト表示フォーム外枠 */
+  .add-members__form{
+    padding: 15px;
+  }
+
+  /* メンバーリスト表示フォーム内部 */
+  .add-members__title{
+    font-size: 16px;
+  }
+
+  .add-members__name{
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .add-members__btn, .add-members__return-btn{
+    font-size: 13px;
+  }
+
 }

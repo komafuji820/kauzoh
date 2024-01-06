@@ -5,11 +5,13 @@
   background-color: pink;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 40px;
 }
 
 /* タイトル部分 */
 .header__title{
+  height: 40px;
   line-height: 40px;
 }
 
@@ -22,56 +24,38 @@
   letter-spacing: 1px;
 }
 
-/* 新規登録・ログイン、ユーザー名・ログアウト */
+/* ユーザー名表示部分 */
 .header__nav{
-  line-height: 40px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
-}
-
-.header__nav-username, .header__nav-link{
-  color: darkslateblue;
-  text-shadow: 1px 1px 1px white;
-  text-decoration: none;
-  font-size: 16px;
-  font-family: 'BIZ UDPGothic', sans-serif;
-  letter-spacing: 3px;
+  align-items: center;
 }
 
 .header__nav-link{
-  margin-left: 30px;
+  color: darkslateblue;
+  text-shadow: 1px 1px 1px white;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: 'BIZ UDPGothic', sans-serif;
   letter-spacing: 1px;
+  margin-left: 30px;
 }
 
 /* スマホ表示時 */
 @media (max-width: 599px) {
-    /* ヘッダー全体 */
+
+  /* ヘッダー全体 */
   .header{
-    height: 30px;
     padding: 0 20px;
   }
 
-  /* タイトル部分 */
-  .header__title-section{
-    line-height: 30px;
+  .header__title-text{
+    font-size: 21px;
   }
 
-  .header__title{
-    font-size: 18px;
-  }
-
-  .header__user-name{
-    font-size: 15px;
-    margin-left: 20px;
-  }
-
-  /* ログアウト・ログイン＆新規登録 */
-  .header__nav-section{
-    line-height: 30px;
-    font-size: 12px;
-  }
-
-  .header__link{
+  .header__nav-link{
+    font-size: 16px;
     margin-left: 15px;
   }
 
