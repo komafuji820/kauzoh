@@ -58,38 +58,30 @@
 
 /* スマホ表示時 */
 @media (max-width: 599px) {
-  .sign-up-wrapper, .sign-in-wrapper{
-    height: calc(100vh - 32px - 14px);
-  }
-  
+
+  /* 新規登録・ログインのタイトル */
   .sign-up-title, .sign-in-title{
-    font-size: 20px;
-    margin-bottom: 8px;
+    font-size: 23px;
   }
-  
+
+  /* 入力フォーム外枠 */
   .new_user{
-    border-radius: 8px;
-    font-size: 12px;
-    padding: 8px 8px 16px;
+    padding: 15px 25px;
   }
-  
-  .sign-up-flash-message, .sign-in-flash-message{
-    margin: 5px 0;
-  }
-  
+
+  /* 入力フォーム内部 */
   .field{
-    margin: 8px 16px 8px;
+    font-size: 14px;
+    margin-bottom: 13px;
   }
-  
+
   .sign-up-form, .sign-in-form{
-    font-size: 12px;
-    margin-top: 2px;
+    font-size: 13px;
   }
-    
+
   .sign-up-btn, .sign-in-btn{
-    height: 24px;
-    font-size: 12px;
-    border-radius: 4px;
+    font-size: 13px;
+    height: 28px;
   }
 
 }
