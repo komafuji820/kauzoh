@@ -65,7 +65,7 @@
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid;
+  border: solid;
 }
 
 .edit-order__delete-btn{
@@ -99,6 +99,7 @@
 
   .edit-order__btn, .edit-order__delete-btn{
     font-size: 13px;
+    border: 1px solid;
   }
   
 }

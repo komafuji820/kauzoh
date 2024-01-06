@@ -47,7 +47,7 @@
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid;
+  border: solid;
 }
 
 .new-order__link{
@@ -80,5 +80,10 @@
   .new-order__input, .new-order__btn, .new-order__link{
     font-size: 10px;
   }
+
+  .new-order__btn, .new-order__link{
+    border: 1px solid;
+  }
+  
 
 }
