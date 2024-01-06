@@ -60,3 +60,46 @@
   height: 0;
   margin: 10px;
 }
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  /* 在庫画面全体 */
+  .item__main-body{
+    min-height: calc(100vh - 40px - 20px - 100px);
+  }
+
+  /* 在庫画面ナビバー */
+  .item-nav-bar{
+    display: flex;
+    align-items: center;
+    height: 70px;
+  }
+
+  .item-nav-bar__title-text{
+    font-size: 16px;
+  }
+
+  .item-nav-bar__links{
+    flex-direction: column;
+  }
+
+  .item-nav-bar__link{
+    font-size: 14px;
+  }
+
+  /* 在庫ナビバーを除く画面 */
+  .item__wrapper, .new-item__wrapper, .edit-item__wrapper{
+    min-height: calc(100vh - 40px - 20px - 100px - 100px);
+    padding: 10px;
+  }
+
+  /* アイテム数が2つのときに左寄せにする設定 */
+  /* .item__wrapper:after{
+    content: "";
+    display: block;
+    width: calc(100%);
+    height: 0;
+    margin: 10px;
+  } */
+}

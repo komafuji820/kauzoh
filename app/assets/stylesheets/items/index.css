@@ -39,3 +39,15 @@
   border-radius: 5px;
   border: solid;
 }
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  /* 在庫一覧画面 */
+
+  /* 在庫表示フォーム外枠 */
+  .item__content{
+    width: calc(100% - 20px);
+  }
+
+}

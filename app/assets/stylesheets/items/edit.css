@@ -32,3 +32,23 @@
 .edit-item__delete-btn{
   background-color: red;
 }
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  /* 編集フォーム外枠 */
+  .edit-item__form{
+    border-radius: 5px;
+    padding: 20px 15px;
+  }
+
+  /* 編集フォーム内部 */
+  .edit-item__title{
+    font-size: 18px;
+  }
+
+  .edit-item__btn, .edit-item__delete-btn{
+    font-size: 13px;
+  }
+
+}

@@ -130,7 +130,7 @@
 
   /* サイドバー・グループナビバーを除く画面の設定 */
   .wrapper__main-body{
-    padding: 0 10px;
+    height: calc(100vh - 40px - 20px - 100px);
   }
 
 }
