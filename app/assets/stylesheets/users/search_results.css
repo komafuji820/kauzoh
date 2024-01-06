@@ -36,3 +36,23 @@
   color: black;  
   border: solid;
 }
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  /* ユーザー検索結果表示ページ */
+
+  /* 検索結果表示フォーム外枠 */
+  .search-results__form{
+    padding: 20px 15px;
+  }
+
+  /* 検索結果表示フォーム内部 */
+  .search-results__text{
+    font-size: 12px;
+  }
+
+  .search-results__btn, .search-results__return-btn{
+    height: 25px;
+    font-size: 13px;
+  }
+}

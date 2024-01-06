@@ -41,3 +41,37 @@
   padding: 0 10px;
   border-radius: 5px;
 }
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  /* ユーザー検索ページ */
+
+  /* タイトル  */
+  .search-user__title{
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  /* 入力フォーム外枠 */
+  .search-user__form{
+    border-radius: 5px;
+    padding: 10px 15px;
+  }
+
+  /* 入力フォーム内 */
+  .search-user__field{
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .search-user__input{
+    font-size: 13px;
+  }
+
+  .search-user__btn{
+    height: 25px;
+    font-size: 13px;
+  }
+
+}

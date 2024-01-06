@@ -82,3 +82,55 @@
   align-items: center;
   flex-direction: column;
 }
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  /* サイドバーの設定 */
+
+  /* グループリストの表示 */
+  .wrapper__side-bar{
+    width: 100px;
+    padding: 30px 5px;
+  }
+
+  /* タイトル・グループ名の共通設定 */
+  .wrapper__side-bar-title, .wrapper__side-bar-name{
+    margin-bottom: 20px;
+  }
+
+  /* グループ名単独の設定 */
+  .wrapper__side-bar-name{
+    letter-spacing: 1px;
+  }
+
+  /* サイドバーを除く画面の設定 */
+  .wrapper__main{
+    width: calc(100vw - 100px);
+  }
+
+  /* グループナビバーの設定 */
+  .wrapper__main-head{
+    height: 100px;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+
+  /* グループ名単独の設定 */
+  .wrapper__current-group{
+    font-size: 16px;
+  }
+
+  /* グループ作成リンク単独の設定 */
+  .wrapper__main-link{
+    font-size: 14px;
+    margin-left: 0px;
+  }
+
+  /* サイドバー・グループナビバーを除く画面の設定 */
+  .wrapper__main-body{
+    padding: 0 10px;
+  }
+
+}
