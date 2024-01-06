@@ -19,7 +19,7 @@
             <div class="item__content">
               <ul class="item__detail">
                 <li class="item__category">カテゴリ：<%= item.category.name %></li>
-                <li class="item__memo">在庫メモ：<%= item.memo %></li>
+                <li class="item__memo">メモ：<%= item.memo %></li>
               <% if item.image.attached? %>
                 <li><%= image_tag item.image.variant(resize: '240x180'), class:'item__image' %></li>
               <% else %>

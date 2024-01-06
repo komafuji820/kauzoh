@@ -34,7 +34,7 @@
 .search-results__return-btn{
   text-decoration: none;
   color: black;  
-  border: solid;
+  border: 1px solid;
 }
 
 /* スマホ表示時 */

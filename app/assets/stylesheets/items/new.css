@@ -38,7 +38,7 @@
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
-  border: solid;
+  border: 1px solid;
 }
 
 /* スマホ表示時 */
@@ -46,16 +46,16 @@
   
   /* 登録フォーム内側 */
   .new-item__title{
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .new-item__field{
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 15px;
   }
 
   .new-item__btn{
-    font-size: 13px;
+    font-size: 10px;
   }
 
 }

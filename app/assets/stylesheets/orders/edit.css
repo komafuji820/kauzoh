@@ -65,7 +65,7 @@
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
-  border: solid;
+  border: 1px solid;
 }
 
 .edit-order__delete-btn{
