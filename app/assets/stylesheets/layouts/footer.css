@@ -1,5 +1,6 @@
 /* フッター部分 */
 .footer{
+  height: 20px;
   width: 100vw;
   background-color: pink;
   text-align: center;
