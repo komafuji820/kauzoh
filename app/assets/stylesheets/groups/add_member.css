@@ -1,16 +1,20 @@
-/* ユーザー検索結果表示ページ */
+/* メンバーリスト表示ページ */
+
+/* メンバーリスト表示フォーム外枠 */
 .add-members__form{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
   padding: 20px;
-  font-size: 16px;
 }
 
+/* メンバーリスト表示フォーム内部 */
 .add-members__title{
   text-align: center;
+  font-size: 18px;
 }
 
 .add-members__name{
+  font-size: 16px;
   margin-top: 15px;
   list-style: inside;
 }
