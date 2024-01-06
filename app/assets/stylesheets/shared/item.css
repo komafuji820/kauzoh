@@ -73,11 +73,11 @@
   .item-nav-bar{
     display: flex;
     align-items: center;
-    height: 70px;
+    height: 100px;
   }
 
   .item-nav-bar__title-text{
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .item-nav-bar__links{
@@ -85,7 +85,7 @@
   }
 
   .item-nav-bar__link{
-    font-size: 14px;
+    font-size: 12px;
   }
 
   /* 在庫ナビバーを除く画面 */

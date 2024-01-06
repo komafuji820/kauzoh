@@ -41,7 +41,6 @@
 
 .edit-order__image-field{
   align-items: center;
-  font-size: 10px;
   margin-bottom: 10px;
 }
 
@@ -51,6 +50,11 @@
   object-fit: contain;
   background-color: white;
   border: double black;
+}
+
+.edit-order__explain{
+  margin-top: 5px;
+  font-size: 10px;
 }
 
 .edit-order__btn, .edit-order__delete-btn{
@@ -73,72 +77,28 @@
 
   /* 編集フォームを中心に持ってくる */
   .edit-order__wrapper{
-    height: calc(100vh - 40px - 20px - 100px - 70px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* 編集フォーム外枠 */
-  .edit-order__form{
-    background-color: rgb(218, 247, 218);
-    border-radius: 5px;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    height: calc(100vh - 40px - 20px - 100px - 100px);
   }
 
   /* 編集フォーム内側 */
   .edit-order__title{
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: darkslateblue;
-    text-shadow: 1px 1px 1px white;
-    font-weight: bold;
+    font-size: 18px;
   }
 
   .edit-order__field, .edit-order__image-field{
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .edit-order__input{
-    margin-top: 5px;
     font-size: 14px;
   }
 
-  .edit-order__image-field{
-    align-items: center;
-    font-size: 10px;
-    margin-bottom: 10px;
+  .edit-order__input{
+    font-size: 12px;
   }
 
-  .edit-order__image{
-    width: 150px;
-    height: 100px;
-    object-fit: contain;
-    background-color: white;
-    border: double black;
+  .edit-order__explain{
+    font-size: 8px;
   }
 
   .edit-order__btn, .edit-order__delete-btn{
-    font-family: 'BIZ UDPGothic', sans-serif;
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-    background-color: skyblue;
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: solid;
+    font-size: 13px;
   }
-
-  .edit-order__delete-btn{
-    background-color: red;
-  }
-
+  
 }
