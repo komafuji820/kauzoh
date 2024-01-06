@@ -1,14 +1,20 @@
 /* グループ詳細画面 */
+
+/* グループ詳細フォーム外枠 */
 .group-detail{
-  padding: 10px 30px 20px;
+  padding: 10px 40px 20px;
   background-color: rgb(249, 223, 238);
   border-radius: 10px;
 }
 
+/* グループ詳細フォーム内側 */
+
+/* グループ名・メンバー・コンテンツ共通設定 */
 .group-detail__name, .group-detail__members, .group-detail__link{
   color: darkslateblue;
 }
 
+/* グループ名 */
 .group-detail__name{
   text-shadow: 1px 1px 1px white;
   font-size: 18px;
@@ -20,6 +26,7 @@
   background: linear-gradient(transparent 60%, #ddaf16 60%);
 }
 
+/* メンバー・コンテンツ・編集リンク */
 .group-detail__members, .group-detail__contents, .group-detail__edit{
   font-size: 16px;
   margin-top: 20px;
@@ -29,11 +36,7 @@
   font-weight: bold;
 }
 
-.group-detail__contents{
-  list-style: inside;
-}
-
-.group-detail__edit{
+.group-detail__contents, .group-detail__edit{
   list-style: inside;
 }
 
