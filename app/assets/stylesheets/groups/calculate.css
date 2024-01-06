@@ -36,3 +36,39 @@
 .calculate-box__field{
   margin-left: 15px;
 }
+
+/* スマホ表示 */
+@media (max-width: 599px) {
+
+  /* 電卓機能 */
+
+  /* 電卓機能メイン画面 */
+  .calculate-section{
+    height: calc(100vh - 40px - 20px - 100px - 100px);
+    overflow: auto;
+    display: block;
+    padding: 10px;
+  }
+
+  /* 電卓機能フォーム外枠 */
+  .calculate-unit-price{
+    padding: 5px;
+  }
+
+  .calculate-title{
+    margin-bottom: 10px;
+  }
+
+  .calculate-box{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    line-height: 20px;
+  }
+
+  .calculate-box__field{
+    margin-left: 2px;
+    margin-bottom: 5px;
+  }
+
+}
