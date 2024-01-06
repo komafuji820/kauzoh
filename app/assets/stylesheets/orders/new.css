@@ -47,7 +47,7 @@
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
-  border: solid;
+  border: 1px solid;
 }
 
 .new-order__link{
@@ -69,16 +69,16 @@
   }
 
   .new-order__title{
-    font-size: 18px;
+    font-size: 14px;
   }
 
   /* 登録フォーム内側 */
   .new-order__field{
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .new-order__input, .new-order__btn, .new-order__link{
-    font-size: 12px;
+    font-size: 10px;
   }
 
 }
