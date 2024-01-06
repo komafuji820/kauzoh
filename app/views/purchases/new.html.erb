@@ -16,7 +16,9 @@
           
           <div class="new-order__title">
             <%= 'お買い物リスト登録' %>
-            <%= link_to '在庫から選ぶときはこちら', group_items_path(@group.id), class:"new-order__link" %>
+          </div>
+          <div class="new-order__link">
+            <%= link_to '在庫から選ぶときはこちら', group_items_path(@group.id),class:"new-order__link-text" %>
           </div>
 
           <%= form_with model: @purchase, url: group_purchases_path(@group.id), local: true do |f| %>

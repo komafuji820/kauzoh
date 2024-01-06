@@ -49,3 +49,22 @@
   justify-content: center;
   margin-bottom: 15px;
 }
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  /* お買い物リスト一覧 */
+
+  /* お買い物リスト外枠 */
+  .order__content{
+    width: calc(100% - 20px);
+  }
+
+  /* お買い物完了ボタン */
+  .order__checked{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 13px;
+  }
+
+}

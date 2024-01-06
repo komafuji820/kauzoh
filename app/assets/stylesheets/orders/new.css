@@ -11,7 +11,7 @@
 
 .new-order__title{
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: darkslateblue;
   text-shadow: 1px 1px 1px white;
   font-weight: bold;
@@ -43,7 +43,7 @@
   font-family: 'BIZ UDPGothic', sans-serif;
   text-decoration: none;
   color: black;
-  font-size: 15px;
+  font-size: 14px;
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
@@ -52,4 +52,33 @@
 
 .new-order__link{
   background-color: rgb(249, 223, 238);
+  margin-bottom: 10px;
+}
+
+.new-order__link-text{
+  text-decoration: none;
+  color: black;
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  
+    /* 登録フォーム外枠 */
+  .new-order__form{
+    padding: 20px;
+  }
+
+  .new-order__title{
+    font-size: 18px;
+  }
+
+  /* 登録フォーム内側 */
+  .new-order__field{
+    font-size: 14px;
+  }
+
+  .new-order__input, .new-order__btn, .new-order__link{
+    font-size: 12px;
+  }
+
 }
