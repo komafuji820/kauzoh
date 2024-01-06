@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-/* 編集フォームの中身を中央揃えにする */
+/* 編集フォーム外枠 */
 .edit-order__form{
   background-color: rgb(218, 247, 218);
   border-radius: 5px;
@@ -17,6 +17,7 @@
   flex-direction: column;
 }
 
+/* 編集フォーム内側 */
 .edit-order__title{
   font-size: 20px;
   margin-bottom: 10px;
@@ -35,11 +36,13 @@
 
 .edit-order__input{
   margin-top: 5px;
+  font-size: 14px;
 }
 
 .edit-order__image-field{
   align-items: center;
   font-size: 10px;
+  margin-bottom: 10px;
 }
 
 .edit-order__image{
@@ -48,7 +51,6 @@
   object-fit: contain;
   background-color: white;
   border: double black;
-  margin-bottom: 5px;
 }
 
 .edit-order__btn, .edit-order__delete-btn{

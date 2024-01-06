@@ -1,4 +1,4 @@
-/* 登録フォームの中身を中央揃えにする */
+/* 登録フォーム外枠 */
 .new-order__form{
   background-color: rgb(218, 247, 218);
   border-radius: 5px;
@@ -17,16 +17,17 @@
   font-weight: bold;
 }
 
+/* 登録フォーム内側 */
 .new-order__field{
   font-size: 16px;
   margin-bottom: 10px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 
 .new-order__input{
   margin-top: 5px;
+  font-size: 14px;
 }
 
 .new-order__image{
@@ -50,6 +51,5 @@
 }
 
 .new-order__link{
-  margin-bottom: 10px;
   background-color: rgb(249, 223, 238);
 }
