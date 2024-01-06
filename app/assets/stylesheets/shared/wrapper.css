@@ -1,9 +1,10 @@
-/* メイン画面全体 */
+/* ヘッダー・フッターを除く画面全体 */
 .wrapper{
   height: calc(100vh - 40px - 20px);
   display: flex;
-  justify-content: center;
 }
+
+/* サイドバーの設定 */
 
 /* グループリストの表示 */
 .wrapper__side-bar{
@@ -14,6 +15,7 @@
   text-align: center;
 }
 
+/* タイトル・グループ名の共通設定 */
 .wrapper__side-bar-title, .wrapper__side-bar-name{
   color: darkslateblue;
   text-shadow: 1px 1px 1px white;
@@ -21,11 +23,13 @@
   margin-bottom: 10px;
 }
 
+/* タイトル単独の設定 */
 .wrapper__side-bar-title{
   font-size: 20px;  
   border-bottom: double;
 }
 
+/* グループ名単独の設定 */
 .wrapper__side-bar-name{
   font-size: 18px;
   text-decoration: none;
@@ -35,13 +39,15 @@
   background: linear-gradient(transparent 60%, #ddaf16 60%);
 }
 
-/* 画面中央・メイン部分全体 */
+/* サイドバーを除く画面の設定 */
 .wrapper__main{
+  height: calc(100vh - 40px - 20px);
   width: calc(100vw - 200px);
 }
 
-/* グループ作成ナビ */
+/* グループナビバーの設定 */
 .wrapper__main-head{
+  height: 30px;
   line-height: 30px;
   background-color: lightyellow;
   display: flex;
@@ -49,23 +55,26 @@
   padding-right: 40px;
 }
 
+/* グループ名・グループ作成リンクの共通設定 */
 .wrapper__current-group, .wrapper__main-link{
   color: darkslateblue;
   text-shadow: 1px 1px 1px white;
   text-decoration: none;
 }
 
+/* グループ名単独の設定 */
 .wrapper__current-group{
   font-size: 18px;
   font-weight: bold;
 }
 
+/* グループ作成リンク単独の設定 */
 .wrapper__main-link{
   font-size: 16px;
   margin-left: 30px;
 }
 
-/* 画面中央・グループ作成ナビ下の部分 */
+/* サイドバー・グループナビバーを除く画面の設定 */
 .wrapper__main-body{
   height: calc(100vh - 40px - 20px - 30px);
   display: flex;

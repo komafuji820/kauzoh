@@ -1,4 +1,6 @@
 /* ユーザー検索ページ */
+
+/* タイトル  */
 .search-user__title{
   font-size: 20px;
   font-family: 'BIZ UDPGothic', sans-serif;
@@ -6,6 +8,7 @@
   margin-bottom: 10px;
 }
 
+/* 入力フォーム外枠 */
 .search-user__form{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
@@ -13,27 +16,21 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 30px;
 }
 
+/* 入力フォーム内 */
 .search-user__field{
   font-size: 15px;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .search-user__input{
   width: 50%;
   font-size: 15px;
-}
-
-.search-user__actions{
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .search-user__btn{

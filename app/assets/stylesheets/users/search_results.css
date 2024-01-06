@@ -1,45 +1,37 @@
 /* ユーザー検索結果表示ページ */
+
+/* 検索結果表示フォーム外枠 */
 .search-results__form{
   background-color: rgb(249, 223, 238);
   border-radius: 5px;
-  padding: 20px;
+  padding: 20px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+/* 検索結果表示フォーム内部 */
 .search-results__text{
   font-size: 16px;
   margin-bottom: 15px;
 }
 
 .search-results__select-user{
-  margin-top: 10px;
+  margin: 15px 0;
 }
 
-.search-results__actions{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.search-results__btn{
+.search-results__btn, .search-results__return-btn{
   height: 30px;
-  font-family: 'BIZ UDPGothic', sans-serif;
-  font-size: 15px;
-  background-color: skyblue;
-  padding: 0 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.search-results__return-btn{
   font-family: 'BIZ UDPGothic', sans-serif;
   font-size: 15px;
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.search-results__return-btn{
   text-decoration: none;
   color: black;  
   border: solid;
