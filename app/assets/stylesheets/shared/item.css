@@ -8,6 +8,7 @@
 
 /* 在庫画面ナビバー */
 .item-nav-bar{
+  height: 30px;
   line-height: 30px;
   background-color: rgb(249, 223, 238);
   display: flex;
@@ -36,7 +37,7 @@
   margin-left: 15px;
 }
 
-/* 在庫ナビ以下の画面 */
+/* 在庫ナビバーを除く画面 */
 .item__wrapper, .new-item__wrapper, .edit-item__wrapper{
   min-height: calc(100vh - 40px - 20px - 30px - 30px);
   overflow: auto;

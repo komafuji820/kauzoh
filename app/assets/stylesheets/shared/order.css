@@ -8,6 +8,7 @@
 
 /* お買い物リスト画面ナビバー */
 .order-nav-bar{
+  height: 30px;
   line-height: 30px;
   background-color: rgb(218, 247, 218);
   display: flex;
@@ -36,7 +37,7 @@
   margin-left: 15px;
 }
 
-/* お買い物リストナビ以下の画面 */
+/* お買い物リストナビを除く画面 */
 .order__wrapper{
   min-height: calc(100vh - 40px - 20px - 30px - 30px);
   display: flex;
