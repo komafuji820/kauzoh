@@ -36,7 +36,7 @@
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid;
+  border: solid;
 }
 
 .order__delete-btn{
@@ -58,6 +58,11 @@
   /* お買い物リスト外枠 */
   .order__content{
     width: calc(100% - 20px);
+  }
+
+  /* お買い物リスト内側 */
+  .order__btn, .order__delete-btn{
+    border: 1px solid;
   }
 
   /* お買い物完了ボタン */

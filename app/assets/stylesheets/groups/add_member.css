@@ -39,7 +39,7 @@
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid;
+  border: solid;
 }
 
 /* スマホ表示 */
@@ -64,6 +64,7 @@
 
   .add-members__btn, .add-members__return-btn{
     font-size: 13px;
+    border: 1px solid;
   }
 
 }

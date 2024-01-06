@@ -37,7 +37,7 @@
   background-color: skyblue;
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid;
+  border: solid;
 }
 
 /* スマホ表示時 */
@@ -48,6 +48,11 @@
   /* 在庫表示フォーム外枠 */
   .item__content{
     width: calc(100% - 20px);
+  }
+
+  /* 在庫表示フォーム内側 */
+  .item__btn{
+    border: 1px solid;
   }
 
 }

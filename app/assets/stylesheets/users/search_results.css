@@ -34,7 +34,7 @@
 .search-results__return-btn{
   text-decoration: none;
   color: black;  
-  border: 1px solid;
+  border: solid;
 }
 
 /* スマホ表示時 */
@@ -54,5 +54,6 @@
   .search-results__btn, .search-results__return-btn{
     height: 25px;
     font-size: 13px;
+    border: 1px solid;
   }
 }
