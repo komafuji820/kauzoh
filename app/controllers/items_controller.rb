@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :limit_access, only: [:index, :new]
 
   def index
-    @items = @group.items
+    @items = @group.items.order("created_at DESC")
   end
 
   def new
