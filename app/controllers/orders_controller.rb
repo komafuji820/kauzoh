@@ -4,8 +4,8 @@ class OrdersController < ApplicationController
   before_action :limit_access, only: [:index, :new]
 
   def index
-    @orders = @group.orders
-    @purchases = @group.purchases
+    @orders = @group.orders.order("created_at DESC")
+    @purchases = @group.purchases.order("created_at DESC")
   end
 
   def new
