@@ -10,7 +10,8 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    @purchase = Purchase.new(purchase_create_params)
+    @group = Group.find(params[:group_id])
+    @purchase = @group.purchases.new(purchase_create_params)
     if @purchase.save
       redirect_to group_orders_path(@purchase.group.id)
     else
