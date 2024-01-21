@@ -21,7 +21,7 @@
             <%= link_to '在庫から選ぶときはこちら', group_items_path(@group.id),class:"new-order__link-text" %>
           </div>
 
-          <%= form_with model: @purchase, url: group_purchases_path(@group.id), local: true do |f| %>
+          <%= form_with model: [@group, @purchase], local: true do |f| %>
             <div class="new-order__form">
             
               <%= render partial: 'form', locals:{ f: f } %>

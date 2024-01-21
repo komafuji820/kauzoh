@@ -5,11 +5,12 @@
   height: calc(100vh - 40px - 20px - 30px - 30px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  overflow: auto;
+  padding: 20px 0;
 }
 
 /* 電卓機能フォーム外枠 */
-.calculate-unit-price{
+.calculate-form{
   border-radius: 10px;
   background-color: rgb(218, 247, 218);
   padding: 20px;

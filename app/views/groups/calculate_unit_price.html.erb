@@ -14,29 +14,31 @@
 
         <div class="calculate-section">
           <div class="calculate-unit-price">
-            <div class="calculate-title">
-              商品の単価を比較できます
-            </div>
-            <% 5.times do |index| %>
-              <div class="calculate-box">
-                <% idx = index + 1%>
-                  <div>
-                    商品<%= idx %>
-                  </div>
-                  <div class="calculate-box__field">
-                    <label for="price<%= idx %>">価格</label>
-                    <input type="number" id="price<%= idx %>" name="price<%= idx %>" autofocus="true" >円
-                  </div>
-                  <div class="calculate-box__field">
-                    <label for="unit<%= idx %>">数量</label>
-                    <input type="number" id="unit<%= idx %>" name="unit<%= idx %>">
-                  </div>
-                  <div class="calculate-box__field">
-                    <label for="unit-price<%= idx %>", class="unit-price">単価:</label>
-                    <span id="unit-price<%= idx%>", class="calculate-text">価格と個数を入力(半角)</span>
-                  </div>
+            <div class="calculate-form">
+              <div class="calculate-title">
+                商品の単価を比較できます
               </div>
-            <% end %>
+              <% 5.times do |index| %>
+                <div class="calculate-box">
+                  <% idx = index + 1%>
+                    <div>
+                      商品<%= idx %>
+                    </div>
+                    <div class="calculate-box__field">
+                      <label for="price<%= idx %>">価格</label>
+                      <input type="number" id="price<%= idx %>" name="price<%= idx %>" autofocus="true" >円
+                    </div>
+                    <div class="calculate-box__field">
+                      <label for="unit<%= idx %>">数量</label>
+                      <input type="number" id="unit<%= idx %>" name="unit<%= idx %>">
+                    </div>
+                    <div class="calculate-box__field">
+                      <label for="unit-price<%= idx %>", class="unit-price">単価:</label>
+                      <span id="unit-price<%= idx%>", class="calculate-text">価格と個数を入力(半角)</span>
+                    </div>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
       
