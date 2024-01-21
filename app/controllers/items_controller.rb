@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :find_group, only: [:index, :new]
+  before_action :find_group, only: [:index, :new, :create]
   before_action :find_item, only: [:edit, :update]
   before_action :limit_access, only: [:index, :new]
 
@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_create_params)
+    @item = @group.items.new(item_create_params)
     if @item.save
       redirect_to group_items_path(@item.group.id)
     else
