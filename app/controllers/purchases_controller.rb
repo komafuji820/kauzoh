@@ -1,8 +1,8 @@
 class PurchasesController < ApplicationController
   before_action :find_purchase, only: [:edit, :update]
+  before_action :find_group, only: [:new, :create]
 
   def new
-    @group = Group.find(params[:group_id])
     unless @group.users.include?(current_user)
       redirect_to root_path
     end
@@ -10,7 +10,6 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    @group = Group.find(params[:group_id])
     @purchase = @group.purchases.new(purchase_create_params)
     if @purchase.save
       redirect_to group_orders_path(@purchase.group.id)
@@ -56,6 +55,10 @@ class PurchasesController < ApplicationController
 
   def find_purchase
     @purchase = Purchase.find(params[:id])
+  end
+
+  def find_group
+    @group = Group.find(params[:group_id])
   end
 
 end
