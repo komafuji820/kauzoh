@@ -14,7 +14,7 @@
 
         <div class="new-order__wrapper">
           
-          <%= form_with model: @order, url: group_orders_path(@group.id), local: true do |f| %>
+          <%= form_with model: [@group, @order], local: true do |f| %>
             <div class="new-order__form">
             
               <div class="new-order__title"><%= 'お買い物リスト登録' %></div>

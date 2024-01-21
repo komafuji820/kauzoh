@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :find_group, only: [:index, :new, :destroy_checked]
+  before_action :find_group, only: [:index, :new, :create, :destroy_checked]
   before_action :find_order, only: [:edit, :update]
   before_action :limit_access, only: [:index, :new]
 
@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_create_params)
+    @order = @group.orders.new(order_create_params)
     if @order.save
       redirect_to group_orders_path(@order.group.id)
     else
