@@ -18,11 +18,10 @@
             <% @orders.each do |order| %>
               <div class="order__content">
                 <ul class="order__detail">
-                  <li><%= f.label "買い終わったらチェック" %>
-                      <%= check_box_tag "order_ids[]", order.id %></li>
+                  <li><%= f.label "買い終わったらチェック" %><%= check_box_tag "order_ids[]", order.id %></li>
+                  <li class="order__memo">メモ：<%= order.memo %></li>
                   <li class="order__category">カテゴリ：<%= order.item.category.name %></li>
                   <li class="order__priority">優先度：<%= order.priority.name %></li>
-                  <li class="order__memo">メモ：<%= order.memo %></li>
                   <% if order.item.image.attached? %>
                     <li><%= image_tag order.item.image.variant(resize: '240x180'), class: 'order__image' %></li>
                   <% else %>
@@ -38,11 +37,10 @@
             <% @purchases.each do |purchase| %>
               <div class="order__content">
                 <ul class="order__detail">
-                  <li><%= f.label "買い終わったらチェック" %>
-                      <%= check_box_tag "purchase_ids[]", purchase.id %></li>
+                  <li><%= f.label "買い終わったらチェック" %><%= check_box_tag "purchase_ids[]", purchase.id %></li>
+                  <li class="purchase__memo">メモ：<%= purchase.memo %></li>
                   <li class="order__category">カテゴリ：<%= purchase.category.name %></li>
                   <li class="order__priority">優先度：<%= purchase.priority.name %></li>
-                  <li class="order__memo">メモ：<%= purchase.memo %></li>
                   <% if purchase.image.present? %>
                     <li><%= image_tag purchase.image.variant(resize: '240x180'), class: 'order__image' %></li>
                   <% else %>

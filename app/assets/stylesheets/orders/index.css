@@ -10,8 +10,15 @@
 }
 
 /* お買い物リスト内側 */
-.order__category, .order__priority, .order__memo{
+.order__category, .order__priority, .order__memo, .purchase__memo{
   margin-top: 5px;
+}
+
+.purchase__memo{
+  font-weight: bold;
+  color: darkslateblue;
+  text-shadow: 1px 1px 1px white;
+  background: linear-gradient(transparent 70%, #ddaf16 60%);
 }
 
 .order__image{
