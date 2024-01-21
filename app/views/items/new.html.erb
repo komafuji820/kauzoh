@@ -14,7 +14,7 @@
 
         <div class="new-item__wrapper">
           
-          <%= form_with model: @item, url: group_items_path(@group.id), local: true do |f| %>
+          <%= form_with model: [@group, @item], local: true do |f| %>
             <div class="new-item__form">
             
               <div class="new-item__title"><%= '在庫登録' %></div>
